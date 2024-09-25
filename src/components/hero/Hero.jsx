@@ -8,7 +8,7 @@ const Hero = () => {
 return (
     <section className='section-headstream'>
                 <div>
-                        <h1>THE GOAT BET</h1>
+                <h1 style={{ color: 'var(--color-primary)' }}>THE GOAT BET</h1>
             <p>
                 Donde la pasión del fútbol se encuentra con la emoción de ganar.
                 <span className="highlight"> Apuesta inteligente</span>, juega a lo grande

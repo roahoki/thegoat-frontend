@@ -4,6 +4,8 @@ import App from '../App'
 import Profile from '../components/Profile'
 import Header from '../components/header/Header'
 import Bonds from '../components/bonds/Bonds'
+import Fixtures from '../pages/Fixtures'
+
 
 const Routing = () => {
   return (
@@ -14,6 +16,7 @@ const Routing = () => {
                 <Route path="/" element={<App />} />
                 <Route path="/bonds" element={<Bonds />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/fixtures" element={<Fixtures />} />
                 <Route path="*" element={<h1>Not Found</h1>} />
             </Routes>
         </BrowserRouter>

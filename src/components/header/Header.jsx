@@ -12,6 +12,7 @@ const Header = () => {
       <a href="/" className='logo'> THE GOAT BET </a>
 
       <nav className="navbar">
+        <a href="/fixtures">Fixtures</a>
         <a href="/">HOME</a>
         <a href="/bonds">BONOS</a>
         <a href="/profile">PERFIL</a>

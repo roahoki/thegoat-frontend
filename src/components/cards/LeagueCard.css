@@ -1,0 +1,53 @@
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    color: black;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    color: var(--color-secondary);
+}
+
+.card h4 {
+    margin: 0 0 10px;
+    color: black;
+}
+.card h5 {
+    margin: 0 0 10px;
+    color: black;
+}
+
+.card p {
+    margin: 0;
+    color: black;
+}
+
+.info {
+    background-color: var(--color-primary);
+    padding: var(--padding);
+}
+
+.odds {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    margin-right: var(--margin);
+    margin-left: var(--margin);
+    align-items: center;
+}
