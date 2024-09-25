@@ -3,7 +3,7 @@ import './FixtureCard.css'
 
 const Card = ({ home, away, date, odd_home, odd_draw, odd_visit }) => {
     return (
-        <div className="card">
+        <div className="cardd">
             <div>
                 <h4>{home}</h4>
                 <h4>{away}</h4>

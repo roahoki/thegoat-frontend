@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from '../App'
-import Profile from '../components/Profile'
 import Header from '../components/header/Header'
-import Bonds from '../components/bonds/Bonds'
+import Bonds from '../pages/bonds/Bonds'
 import Fixtures from '../pages/Fixtures'
+import Profile from '../pages/Profile'
 
 
 const Routing = () => {
