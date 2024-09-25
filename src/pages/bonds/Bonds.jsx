@@ -5,7 +5,7 @@ const Bonds = () => {
     const {user, isAuthenticated } = useAuth0()
     return (
         <div>
-        BONOSSSSSSOSOSOS
+        Próximamente podrás ver tus bonos aquí
         </div>
     )
 }

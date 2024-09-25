@@ -3,7 +3,7 @@
     padding: 20px;
     margin: 10px;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #000000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
@@ -16,16 +16,16 @@
 
 .card h3 {
     margin: 0 0 10px;
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .card h4 {
     margin: 0 0 10px;
-    color: black;
+    color: var(--color-primary);
 }
 .card h5 {
     margin: 0 0 10px;
-    color: black;
+    color: var(--color-tertiary);
 }
 
 .card p {

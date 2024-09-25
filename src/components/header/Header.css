@@ -17,6 +17,7 @@
 
 .header a:hover {
     text-decoration: inherit;
+    color: var(--color-secondary);
 }
 
 .logo {
