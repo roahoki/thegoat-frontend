@@ -1,8 +1,24 @@
+/* Aplica box-sizing a todos los elementos */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'DM Sans', sans-serif;
-    box-sizing: border-box;
+}
+
+header {
+    position: relative;
+    /* Cambia si el header está fijo */
+    z-index: 10;
+    background-color: #fa6900;
+    /* Ajusta según tu estilo */
+    padding: 20px;
+    width: 100%;
 }
 
 .section-headstream {
@@ -10,12 +26,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 50px;
-    /* Ajuste para darle más espacio a la sección */
     width: 100%;
     max-width: 1200px;
-    /* Define un ancho máximo para que el contenido no se extienda demasiado en pantallas grandes */
     margin: 0 auto;
     height: 100vh;
+    margin-top: 80px;
+    /* Añadido para dar espacio entre el header y el contenido */
 }
 
 .section-headstream div {
@@ -27,28 +43,24 @@ body {
     font-size: 4rem;
     margin-bottom: 20px;
     color: white;
-    /* Ajusta el color para que sea visible */
 }
 
 .section-headstream p {
     font-size: 1.2rem;
     margin-bottom: 30px;
     color: white;
-    /* Ajusta el color para que sea visible */
 }
 
 .section-headstream img {
     max-width: 100%;
     height: auto;
     object-fit: cover;
-    /* Ajuste para asegurar que la imagen ocupe bien su contenedor */
+    /* Cambiado de 'contain' a 'cover' para asegurar que la imagen llene el contenedor */
     border-radius: 10px;
-    /* Para bordes redondeados */
 }
 
 .highlight {
     color: var(--color-primary);
-    /* Ajuste para que el color sea visible */
 }
 
 @media (max-width: 768px) {
@@ -56,6 +68,8 @@ body {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-top: 60px;
+        /* Ajusta para pantallas pequeñas */
     }
 
     .section-headstream img {
