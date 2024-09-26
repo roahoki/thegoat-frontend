@@ -1,15 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Card from './FixtureCard'
 import fixturesData from './fixtures.json'
 import { FixturesContext } from '../../contexts/FixturesContext'
 
 const RenderCard = () => {
     const { selectedLeague, setSelectedLeague, selectedDate } = useContext(FixturesContext)
+    const [visibleCount, setVisibleCount] = useState(3) // Estado para controlar cuántos resultados se muestran
 
     // Si selectedLeague es null, tomar la primera liga en fixturesData
     const leagueToFilter = selectedLeague || fixturesData.fixtures[0].league.name
 
-    setSelectedLeague(leagueToFilter)
+    useEffect(() => {
+        setSelectedLeague(leagueToFilter)
+    }, [leagueToFilter, setSelectedLeague])
+
+    // Reiniciar visibleCount cuando cambie selectedLeague o selectedDate
+    useEffect(() => {
+        setVisibleCount(3)
+    }, [selectedLeague, selectedDate])
 
     const filteredFixtures = fixturesData.fixtures.filter(fixture => {
         const isLeagueMatch = fixture.league.name === leagueToFilter
@@ -34,21 +42,27 @@ const RenderCard = () => {
         }
     })
 
+    const handleLoadMore = () => {
+        setVisibleCount(prevCount => prevCount + 3)
+    }
+
     return (
         <div>
-            {cardsData.length > 0 ? (
-                cardsData.map((card, index) => (
-                    <Card
-                        key={index}
-                        home={card.home}
-                        away={card.away}
-                        date={card.date}
-                        odd_home={card.odd_home}
-                        odd_draw={card.odd_draw}
-                        odd_visit={card.odd_visit}
-                    />
-                ))
-            ) : (
+            {cardsData.slice(0, visibleCount).map((card, index) => (
+                <Card
+                    key={index}
+                    home={card.home}
+                    away={card.away}
+                    date={card.date}
+                    odd_home={card.odd_home}
+                    odd_draw={card.odd_draw}
+                    odd_visit={card.odd_visit}
+                />
+            ))}
+            {visibleCount < cardsData.length && (
+                <button onClick={handleLoadMore}>Cargar más</button>
+            )}
+            {cardsData.length === 0 && (
                 <p>Esta liga no tiene partidos disponibles</p>
             )}
         </div>
