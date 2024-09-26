@@ -4,7 +4,7 @@ import fixturesData from './fixtures.json'
 import { FixturesContext } from '../../contexts/FixturesContext'
 
 const RenderCard = () => {
-    const { selectedLeague, setSelectedLeague, selectedDate } = useContext(FixturesContext)
+    const { selectedLeague, setSelectedLeague, selectedDate, setSelectedDate } = useContext(FixturesContext)
     const [visibleCount, setVisibleCount] = useState(3) // Estado para controlar cuántos resultados se muestran
 
     // Si selectedLeague es null, tomar la primera liga en fixturesData
@@ -14,10 +14,16 @@ const RenderCard = () => {
         setSelectedLeague(leagueToFilter)
     }, [leagueToFilter, setSelectedLeague])
 
-    // Reiniciar visibleCount cuando cambie selectedLeague o selectedDate
+    // Reiniciar visibleCount y selectedDate cuando cambie selectedLeague
     useEffect(() => {
         setVisibleCount(3)
-    }, [selectedLeague, selectedDate])
+        setSelectedDate(null)
+    }, [selectedLeague, setSelectedDate])
+
+    // Reiniciar visibleCount cuando cambie selectedDate
+    useEffect(() => {
+        setVisibleCount(3)
+    }, [selectedDate])
 
     const filteredFixtures = fixturesData.fixtures.filter(fixture => {
         const isLeagueMatch = fixture.league.name === leagueToFilter
