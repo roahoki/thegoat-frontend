@@ -1,17 +1,15 @@
-import React from 'react'
+
+import React, { useContext } from 'react';
+import { FixturesContext } from '../../contexts/FixturesContext';
 import './LeagueCard.css' 
 
-const LeagueCard = () => {
+const LeagueCard = ({league, country}) => {
+
+    const { selectedLeague } = useContext(FixturesContext)
     return (
         <div className="card">
-            <div>
-                <h3>Premier League</h3>
-                <h5>England</h5>
-            </div>
-
-            <div className='odds'>
+                <h3>{selectedLeague}</h3>
                 <h3>Resultado del Partido</h3>
-            </div>
 
         </div>
     )

@@ -1,0 +1,24 @@
+/* LeagueList.css */
+.league-list {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #444;
+}
+
+.league-list::-webkit-scrollbar {
+    height: 8px;
+    /* Altura de la scrollbar en la parte inferior */
+}
+
+.league-list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Color de la barra de desplazamiento */
+    border-radius: 10px;
+}
+
+.league-list::-webkit-scrollbar-track {
+    background-color: #444;
+    /* Color de fondo de la barra */
+}
