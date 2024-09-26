@@ -2,10 +2,22 @@ import React, { useContext } from 'react'
 import Card from './FixtureCard'
 import fixturesData from './fixtures.json'
 import { FixturesContext } from '../../contexts/FixturesContext'
-const RenderCard = () => {
-    const { selectedLeague } = useContext(FixturesContext)
 
-    const filteredFixtures = fixturesData.fixtures.filter(fixture => fixture.league.name === selectedLeague)
+const RenderCard = () => {
+    const { selectedLeague, setSelectedLeague, selectedDate } = useContext(FixturesContext)
+
+    // Si selectedLeague es null, tomar la primera liga en fixturesData
+    const leagueToFilter = selectedLeague || fixturesData.fixtures[0].league.name
+
+    setSelectedLeague(leagueToFilter)
+
+    const filteredFixtures = fixturesData.fixtures.filter(fixture => {
+        const isLeagueMatch = fixture.league.name === leagueToFilter
+        const fixtureDate = fixture.fixture.date.split('T')[0] // Obtener solo la parte de la fecha
+        const isDateMatch = selectedDate ? fixtureDate >= selectedDate : true
+
+        return isLeagueMatch && isDateMatch
+    })
 
     const cardsData = filteredFixtures.map(fixture => {
         const homeOdd = fixture.odds[0]?.values.find(value => value.value === "Home")?.odd || 'N/A';
