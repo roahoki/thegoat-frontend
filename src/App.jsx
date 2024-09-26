@@ -8,7 +8,7 @@ function App() {
   const { user, isAuthenticated } = useAuth0()
 
   return (
-    <div>
+    <div className='container'>
       <Hero />
     </div>
   )

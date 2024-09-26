@@ -91,15 +91,6 @@ p {
   font: var(--p);
 }
 
-button {
-  font: var(--p);
-  border: none;
-  background-color: var(--color-primary);
-  cursor: pointer;
-}
 
-button:hover {
-  background-color: var(--color-secondary);
-}
 
 

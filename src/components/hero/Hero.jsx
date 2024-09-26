@@ -16,7 +16,7 @@ return (
                         {isAuthenticated ? null : <LoginButton />}
                 </div>
 
-                <div>
+                <div className='imgcontainer'>
                         <img src="src/assets/pexels-unknown6user-1657332.jpg" alt="Futbol Image" />
                 </div>
 

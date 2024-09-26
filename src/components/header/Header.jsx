@@ -16,11 +16,13 @@ const Header = () => {
         <a href="/fixtures">BET</a>
         <a href="/bonds">BONOS</a>
         <a href="/profile">PERFIL</a>
-        {
-          isAuthenticated ? <LogoutButton /> : <LoginButton />
-        }
+        
         
       </nav>
+
+      {
+        isAuthenticated ? <LogoutButton /> : <LoginButton />
+      }
     </header>
   )
 }
