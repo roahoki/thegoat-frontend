@@ -37,7 +37,7 @@ const RenderCard = () => {
                     />
                 ))
             ) : (
-                <p >Esta liga no tiene partidos disponibles</p>
+                <p>Esta liga no tiene partidos disponibles</p>
             )}
         </div>
     )

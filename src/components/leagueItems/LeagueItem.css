@@ -1,7 +1,7 @@
 .league-item {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     background-color: #333;
     border-radius: 2rem;
     padding: var(--padding-small);
@@ -9,6 +9,12 @@
     width: 200px;
     text-align: center;
     color: white;
+}
+
+.league-item:hover {
+    background-color: #444;
+    cursor: pointer;
+
 }
 
 .league-logo {
@@ -22,3 +28,4 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
