@@ -7,9 +7,10 @@ export const FixturesContext = createContext()
 export const FixturesProvider = ({ children }) => {
     const [selectedLeague, setSelectedLeague] = useState(null)
     const [selectedDate, setSelectedDate] = useState(null)
+    const [selectedCard, setSelectedCard] = useState(null) // Estado para la card seleccionada
 
     return (
-        <FixturesContext.Provider value={{ selectedLeague, setSelectedLeague, selectedDate, setSelectedDate }}>
+        <FixturesContext.Provider value={{ selectedLeague, setSelectedLeague, selectedDate, setSelectedDate, selectedCard, setSelectedCard }}>
             {children}
         </FixturesContext.Provider>
     )

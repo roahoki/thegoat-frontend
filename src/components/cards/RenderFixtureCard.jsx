@@ -4,7 +4,7 @@ import fixturesData from './fixtures.json'
 import { FixturesContext } from '../../contexts/FixturesContext'
 
 const RenderCard = () => {
-    const { selectedLeague, setSelectedLeague, selectedDate, setSelectedDate } = useContext(FixturesContext)
+    const { selectedLeague, setSelectedLeague, selectedDate, setSelectedDate, selectedCard, setSelectedCard} = useContext(FixturesContext)
     const [visibleCount, setVisibleCount] = useState(3) // Estado para controlar cuántos resultados se muestran
 
     // Si selectedLeague es null, tomar la primera liga en fixturesData
@@ -52,18 +52,25 @@ const RenderCard = () => {
         setVisibleCount(prevCount => prevCount + 3)
     }
 
+    const handleCardClick = (card) => {
+        setSelectedCard(card)
+        console.log("Selected card:", card);
+        
+    }
+
     return (
         <div>
             {cardsData.slice(0, visibleCount).map((card, index) => (
-                <Card
-                    key={index}
-                    home={card.home}
-                    away={card.away}
-                    date={card.date}
-                    odd_home={card.odd_home}
-                    odd_draw={card.odd_draw}
-                    odd_visit={card.odd_visit}
-                />
+                <div key={index} onClick={() => handleCardClick(card)}>
+                    <Card
+                        home={card.home}
+                        away={card.away}
+                        date={card.date}
+                        odd_home={card.odd_home}
+                        odd_draw={card.odd_draw}
+                        odd_visit={card.odd_visit}
+                    />
+                </div>
             ))}
             {visibleCount < cardsData.length && (
                 <button onClick={handleLoadMore}>Cargar más</button>
