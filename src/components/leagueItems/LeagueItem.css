@@ -1,0 +1,31 @@
+.league-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #333;
+    border-radius: 2rem;
+    padding: var(--padding-small);
+    margin-right: var(--margin-small);
+    width: 200px;
+    text-align: center;
+    color: white;
+}
+
+.league-item:hover {
+    background-color: #444;
+    cursor: pointer;
+
+}
+
+.league-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.league-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

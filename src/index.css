@@ -15,7 +15,7 @@
   /* colors */
   --color-primary: #fa6900;
   --color-secondary: #250ff3;
-  --color-tertiary: #ff006e;
+  --color-tertiary: #c00000;
   --color-black: #060606;
   --color-white: #f8f8f8;
 
@@ -24,9 +24,26 @@
   --h2: bold 3rem/1em 'DM Sans', sans-serif;
   --h3: bold 2.25rem/1em 'DM Sans', sans-serif;
   --h4: bold 1.5rem/1em 'DM Sans', sans-serif;
+  --h5: bold 1.25rem/1em 'DM Sans', sans-serif;
   --big: 1.25rem/1.6em 'DM Sans', sans-serif;
   --p: 1rem/1.6em 'DM Sans', sans-serif;
   --small: 0.75rem/2em 'DM Sans', sans-serif;
+
+  /* padding */
+  --padding: 1rem;
+  --padding-big: 2rem;
+  --padding-small: 0.5rem;
+
+  /* margin */
+  --margin: 1rem;
+  --margin-big: 2rem;
+  --margin-small: 0.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 a {
@@ -41,12 +58,16 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  color: var(--color-white);
-  background-color: var(--color-black);
+  padding: 0;
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight);
+  color: var(--color);
+  background-color: var(--background-color);
+  font-synthesis: var(--font-synthesis);
+  text-rendering: var(--text-rendering);
+  -webkit-font-smoothing: var(--webkit-font-smoothing);
+  -moz-osx-font-smoothing: var(--moz-osx-font-smoothing);
 }
 
 h1 {
@@ -70,38 +91,6 @@ p {
   font: var(--p);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--color-black);
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
 
-button:hover {
-  border-color: var(--color-primary);
-}
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--color-black);
-    background-color: var(--color-white);
-  }
-
-  a:hover {
-    color: var(--color-tertiary);
-  }
-
-  button {
-    background-color: var(--color-white);
-  }
-}

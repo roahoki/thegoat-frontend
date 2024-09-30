@@ -1,0 +1,38 @@
+.cardd {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardd:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #c00000;
+    cursor: pointer;
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    color: black;
+}
+
+.card p {
+    margin: 0;
+    color: black;
+}
+
+.oddss {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    margin-right: var(--margin);
+    margin-left: var(--margin);
+}

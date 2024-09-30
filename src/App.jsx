@@ -1,14 +1,16 @@
 import './App.css'
+
+import { useAuth0 } from '@auth0/auth0-react'
+import Hero from './components/hero/Hero'
+
 function App() {
 
+  const { user, isAuthenticated } = useAuth0()
+
   return (
-    <>
-    <div>
-      <h1>THE GOAT BET</h1>
-      <p>test</p>
-      <a href="/signin">Sign in</a>
+    <div className='container'>
+      <Hero />
     </div>
-    </>
   )
 }
 

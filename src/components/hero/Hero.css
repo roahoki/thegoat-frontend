@@ -1,0 +1,70 @@
+/* Aplica box-sizing a todos los elementos */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.section-headstream {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-big);
+    width: 100%;
+}
+
+.section-headstream div {
+    flex: 1;
+    margin: var(--margin-big);
+    align-items: center;
+}
+
+.imgcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-headstream h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.section-headstream p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.section-headstream img {
+    border-radius: 2rem;
+    width: 60%;
+}
+
+.highlight {
+    color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .section-headstream {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 60px;
+        /* Ajusta para pantallas pequeñas */
+    }
+
+    .section-headstream img {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .section-headstream h1 {
+        font-size: 3rem;
+    }
+
+    .section-headstream p {
+        font-size: 1rem;
+    }
+}

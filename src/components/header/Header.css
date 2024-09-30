@@ -1,0 +1,34 @@
+.header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--padding);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
+.header a:hover {
+    text-decoration: inherit;
+    color: var(--color-secondary);
+}
+
+.logo {
+    font-size: var(--h1);
+    font-weight: bold;
+    margin-left: var(--margin);
+}
+
+.navbar {
+    margin-right: var(--margin);
+    padding: var(--padding-small);
+    display: flex;
+    gap: var(--margin-small);
+}
