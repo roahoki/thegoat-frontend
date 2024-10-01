@@ -1,28 +1,33 @@
 import React, { useContext, useState, useEffect } from 'react'
 import Card from './FixtureCard'
-import fixturesData from './fixtures.json'
 import { FixturesContext } from '../../contexts/FixturesContext'
 
 const RenderCard = () => {
-    const { selectedLeague, setSelectedLeague, selectedDate, setSelectedDate, selectedCard, setSelectedCard} = useContext(FixturesContext)
-    const [visibleCount, setVisibleCount] = useState(5) // Estado para controlar cuántos resultados se muestran
+    const { selectedLeague, setSelectedLeague, selectedDate, setSelectedDate, selectedCard, setSelectedCard } = useContext(FixturesContext)
+    const [visibleCount, setVisibleCount] = useState(3) // Estado para controlar cuántos resultados se muestran
+    const [fixturesData, setFixturesData] = useState({ fixtures: [] }) // Estado para los datos de los fixtures
 
     // Si selectedLeague es null, tomar la primera liga en fixturesData
-    const leagueToFilter = selectedLeague || fixturesData.fixtures[0].league.name
-
-    
+    const leagueToFilter = selectedLeague || (fixturesData.fixtures[0] && fixturesData.fixtures[0].league.name)
 
     useEffect(() => {
-        setSelectedLeague(leagueToFilter)
-    }, [leagueToFilter, setSelectedLeague])
+        // Realizar la solicitud GET a la API
+        fetch('/api/fixtures/data')
+            .then(response => response.json())
+            .then(data => {
+                setFixturesData(data)
+                if (!selectedLeague && data.fixtures.length > 0) {
+                    setSelectedLeague(data.fixtures[0].league.name)
+                }
+            })
+            .catch(error => console.error('Error fetching fixtures:', error))
+    }, [setSelectedLeague, selectedLeague])
 
-    // Reiniciar visibleCount y selectedDate cuando cambie selectedLeague
     useEffect(() => {
-        setVisibleCount(5)
+        setVisibleCount(3)
         setSelectedDate(null)
     }, [selectedLeague, setSelectedDate])
 
-    // Reiniciar visibleCount cuando cambie selectedDate
     useEffect(() => {
         setVisibleCount(3)
     }, [selectedDate])
@@ -57,7 +62,7 @@ const RenderCard = () => {
     const handleCardClick = (card) => {
         setSelectedCard(card)
         console.log("Selected card:", card);
-        
+
     }
 
     return (

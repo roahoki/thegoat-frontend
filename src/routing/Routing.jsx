@@ -4,7 +4,7 @@ import App from '../App'
 import Header from '../components/header/Header'
 import Bonds from '../pages/bonds/Bonds'
 import Fixtures from '../pages/Fixtures'
-import Profile from '../pages/Profile'
+import Profile from '../pages/profile/Profile'
 
 
 const Routing = () => {

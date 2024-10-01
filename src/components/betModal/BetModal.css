@@ -1,6 +1,5 @@
 .bet-modal {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -12,7 +11,7 @@
     z-index: 1;
 }
 
-.bet-modal-content{
+.bet-modal-content {
     background-color: var(--color-tertiary);
     border-radius: 10px;
     padding: 20px;
@@ -22,4 +21,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.odds-options {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.odds-options div {
+    cursor: pointer;
+}
+
+.odds-options .selected {
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.user-bet-options {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
 }
