@@ -10,10 +10,10 @@ return (
                 <div>
                 <h1 style={{ color: 'var(--color-primary)' }}>THE GOAT BET</h1>
             <p>
-                Donde la pasión del fútbol se encuentra con la emoción de ganar.
+                Donde la pasión del fútbol es la emoción de ganar.
                 <span className="highlight"> Apuesta inteligente</span>, juega a lo grande
             </p>
-                        {isAuthenticated ? null : <LoginButton />}
+        
                 </div>
 
                 <div className='imgcontainer'>

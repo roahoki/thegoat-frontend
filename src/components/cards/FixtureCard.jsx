@@ -4,10 +4,16 @@ import './FixtureCard.css'
 const Card = ({ home, away, date, odd_home, odd_draw, odd_visit }) => {
     return (
         <div className="cardd">
-            <div>
+
+            <div className='teams-container'>
                 <h4>{home}</h4>
                 <h4>{away}</h4>
                 <p>{date}</p>
+            </div>
+
+            <div className='bond-container'>
+                <h3>bonos</h3>
+                <p>disponibles</p>
             </div>
 
             <div className='oddss'>

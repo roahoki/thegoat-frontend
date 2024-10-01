@@ -6,7 +6,7 @@ const Wallet = () => {
   const { user, isAuthenticated } = useAuth0()
   return (
     <div>
-      {isAuthenticated ? <p>Saldo: $1000</p> : <p>Debes iniciar sesión para ver tu saldo</p>}
+      {isAuthenticated ? <h2>Saldo:</h2> : <h2>Debes iniciar sesión para ver tu saldo</h2>}
     </div>
   )
 }

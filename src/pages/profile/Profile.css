@@ -1,0 +1,45 @@
+.profile-container {
+    display: flex;
+    justify-content: space-around;
+    height: 88vh;
+    align-items: center;
+}
+
+.picture-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-wallet-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-wallet-container input {
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.user-wallet-container button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
