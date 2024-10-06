@@ -1,29 +1,89 @@
-import React, { useState } from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
-import './Profile.css'
+import React, { useState, useEffect } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import './Profile.css';
+import axios from 'axios';
 
 const Profile = () => {
-    const { user, isAuthenticated } = useAuth0()
-    const [saldo, setSaldo] = useState(0) // Estado para el saldo
-    const [monto, setMonto] = useState('') // Estado para el monto a cargar
-    const [showInput, setShowInput] = useState(false) // Estado para mostrar el input
+    const { user, isAuthenticated } = useAuth0();
+    const [balance, setBalance] = useState(0); // State for the balance
+    const [amount, setAmount] = useState(''); // State for the amount to load
+    const [showInput, setShowInput] = useState(false); // State to show the input
+
+    // URL of your API
+    const backendUrl = import.meta.env.VITE_BACKEND_URL
+    const API_URL = backendUrl; // Replace with the real URL of your API
+
+    // Get sessionToken and userId from localStorage
+    const sessionToken = localStorage.getItem('sessionToken');
+    // const sessionToken = "test";
+    const userId = localStorage.getItem('userId');
+
+    useEffect(() => {
+        // Get the initial balance from the API
+        const getBalance = async () => {
+            try {
+                console.log('userId:', userId);
+
+                const response = await axios.get(`${API_URL}/users/wallet/${userId}`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${sessionToken}`,
+                        
+                    },
+                });
+
+                if (response.status === 200) {
+                    const data = response.data;
+                     // Convertir la respuesta a JSON
+                    setBalance(data.billetera); // Asegúrate de que 'balance' es el campo correcto
+                } else {
+                    console.error('Error getting the balance:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error getting the balance:', error);
+            }
+        };
+
+        getBalance();
+    }, [sessionToken]);
 
     const handleLoadMoney = () => {
-        setShowInput(true)
-    }
+        setShowInput(true);
+    };
 
-    const handleMontoChange = (e) => {
-        setMonto(e.target.value)
-    }
+    const handleAmountChange = (e) => {
+        setAmount(e.target.value);
+    };
 
-    const handleAddMoney = () => {
-        const montoNumerico = parseFloat(monto)
-        if (!isNaN(montoNumerico) && montoNumerico > 0) {
-            setSaldo(saldo + montoNumerico)
-            setMonto('')
-            setShowInput(false)
+    const handleAddMoney = async () => {
+        const numericAmount = parseFloat(amount);
+        if (!isNaN(numericAmount) && numericAmount > 0) {
+            try {
+                const response = await axios.put(`${API_URL}/users/wallet`, {
+                    amount: numericAmount,
+                    user_id: userId
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${sessionToken}`,
+                        // You can add additional headers here if necessary
+                    }
+                });
+                if (response.status === 200) {
+                    console.log('Balance updated successfully:', response.data);
+                    const data = response.data;
+                    await setBalance(data.user.billetera); // Update the balance with the value returned by the API
+                    console.log(data.user.billetera);
+                    await setAmount('');
+                    setShowInput(false);
+                } else {
+                    console.error('Error updating the balance:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error making the request:', error);
+            }
         }
-    }
+    };
 
     return (
         isAuthenticated && (
@@ -36,25 +96,25 @@ const Profile = () => {
 
                 <div className='user-info-container'>
                     <div className='user-wallet-container'>
-                        <h2>Saldo: ${saldo.toFixed(0)}</h2>
+                        <h2>Balance: ${balance.toFixed(0)}</h2>
                         {showInput ? (
                             <div>
                                 <input
                                     type="number"
-                                    value={monto}
-                                    onChange={handleMontoChange}
-                                    placeholder="Ingrese el monto"
+                                    value={amount}
+                                    onChange={handleAmountChange}
+                                    placeholder="Enter the amount"
                                 />
-                                <button onClick={handleAddMoney}>Agregar</button>
+                                <button onClick={handleAddMoney}>Add</button>
                             </div>
                         ) : (
-                            <button onClick={handleLoadMoney}>Cargar Dinero</button>
+                            <button onClick={handleLoadMoney}>Load Money</button>
                         )}
                     </div>
                 </div>
             </div>
         )
-    )
-}
+    );
+};
 
-export default Profile
+export default Profile;

@@ -1,37 +1,54 @@
-import React, { useContext, useState } from 'react'
-import { FixturesContext } from '../../contexts/FixturesContext'
-import './BetModal.css'
+import React, { useContext, useState } from 'react';
+import axios from 'axios';
+import { FixturesContext } from '../../contexts/FixturesContext';
+import './BetModal.css';
 
 const BetModal = () => {
-    const { selectedCard, setSelectedCard } = useContext(FixturesContext)
+    const { selectedCard, setSelectedCard } = useContext(FixturesContext);
 
-    const [selectedOdd, setSelectedOdd] = useState(null)
-    const [selectedAmount, setSelectedAmount] = useState(1)
-    const [betAmount, setBetAmount] = useState('')
+    const [selectedOdd, setSelectedOdd] = useState(null);
+    const [selectedAmount, setSelectedAmount] = useState(1);
+    const [betAmount, setBetAmount] = useState('');
 
-    if (!selectedCard) return null
+    if (!selectedCard) return null;
 
     const handleClose = () => {
-        setSelectedCard(null)
-        setBetAmount('')
-        setSelectedAmount(1)
-        setSelectedOdd(null)
-    }
+        setSelectedCard(null);
+        setBetAmount('');
+        setSelectedAmount(1);
+        setSelectedOdd(null);
+    };
 
-    const handleBet = () => {
+    const handleBet = async () => {
         const betRequest = {
-            card: selectedCard,
-            odd: selectedOdd,
-            amount: betAmount,
-            bonuses: selectedAmount
-        }
-        console.log('Bet Request:', betRequest)
-        handleClose();        
-    }
+            group_id: '15', // Asumiendo que el group_id es 15
+            fixture_id: selectedCard.id,
+            league_name: selectedCard.league,
+            round: selectedCard.round,
+            date: selectedCard.date,
+            result: selectedOdd,
+            deposit_token: '', // Asumiendo que no hay token de depósito
+            datetime: new Date().toISOString(),
+            quantity: selectedAmount,
+            user_id: 1, // Asumiendo un user_id de 1
+            status: 'pending',
+        };
+
+        console.log('Bet Request:', betRequest);
+        
+
+        // try {
+        //     const response = await axios.post('/api/requests', betRequest);
+        //     console.log('Bet Request Response:', response.data);
+        //     handleClose();
+        // } catch (error) {
+        //     console.error('Error creating bet request:', error);
+        // }
+    };
 
     const handleOddSelection = (odd) => {
-        setSelectedOdd(odd)
-    }
+        setSelectedOdd(odd);
+    };
 
     return (
         <div className="bet-modal">
@@ -91,7 +108,7 @@ const BetModal = () => {
                 <button onClick={handleClose}>Cerrar</button>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default BetModal
+export default BetModal;

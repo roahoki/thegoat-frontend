@@ -3,11 +3,11 @@ import React, {useContext} from 'react';
 import { FixturesContext } from '../../contexts/FixturesContext';
 import './LeagueList.css';
 import LeagueItem from './LeagueItem';
-import fixturesData from '../cards/fixtures.json';
+// import fixturesData from '../cards/fixtures.json';
 
 
 const LeagueList = () => {
-    const { setSelectedLeague } = useContext(FixturesContext);
+    const { setSelectedLeague, fixturesData} = useContext(FixturesContext);
 
     // Extraer ligas únicas desde fixturesData
     const leagues = fixturesData.fixtures.reduce((acc, fixture) => {
