@@ -1,13 +1,19 @@
-import React from 'react'
-import { useAuth0 } from '@auth0/auth0-react'
+// bond.jsx
+
+import React from 'react';
+import RenderBond from '../../components/bonds/RenderBond';
+
 
 const Bonds = () => {
-    const {user, isAuthenticated } = useAuth0()
-    return (
-        <div>
-        Próximamente podrás ver tus bonos aquí
-        </div>
-    )
-}
+  // Replace this with the actual way you retrieve the user ID
+  const userId = localStorage.getItem('userId');
 
-export default Bonds
+  return (
+    <div>
+      <h1>Your Bonds</h1>
+      <RenderBond userId={userId} />
+    </div>
+  );
+};
+
+export default Bonds;

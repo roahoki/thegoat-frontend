@@ -1,12 +1,14 @@
 import React, { useContext, useState, useEffect } from 'react'
 import Card from './FixtureCard'
-import fixturesData from './fixtures.json'
+// import fixturesData from './fixtures.json'
 import { FixturesContext } from '../../contexts/FixturesContext'
 
 const RenderCard = () => {
-    const { selectedLeague, setSelectedLeague, selectedDate, setSelectedDate, selectedCard, setSelectedCard} = useContext(FixturesContext)
+    const { selectedLeague, setSelectedLeague, selectedDate, setSelectedDate, selectedCard, setSelectedCard, fixturesData} = useContext(FixturesContext)
     const [visibleCount, setVisibleCount] = useState(5) // Estado para controlar cuántos resultados se muestran
-
+    // console.log(fixturesData.fixtures); // aqui tenemos el array de fixtures
+    // console.log(fixturesData.fixtures[0].date);
+    
     // Si selectedLeague es null, tomar la primera liga en fixturesData
     const leagueToFilter = selectedLeague || fixturesData.fixtures[0].league.name
 
@@ -24,31 +26,36 @@ const RenderCard = () => {
 
     // Reiniciar visibleCount cuando cambie selectedDate
     useEffect(() => {
-        setVisibleCount(3)
+        setVisibleCount(5)
     }, [selectedDate])
 
     const filteredFixtures = fixturesData.fixtures.filter(fixture => {
         const isLeagueMatch = fixture.league.name === leagueToFilter
-        const fixtureDate = fixture.fixture.date.split('T')[0] // Obtener solo la parte de la fecha
+        const fixtureDate = fixture.date.split('T')[0] // Obtener solo la parte de la fecha
+        
         const isDateMatch = selectedDate ? fixtureDate >= selectedDate : true
 
         return isLeagueMatch && isDateMatch
     })
-
+    // console.log(filteredFixtures)
     const cardsData = filteredFixtures.map(fixture => {
-        const homeOdd = fixture.odds[0]?.values.find(value => value.value === "Home")?.odd || 'N/A';
-        const drawOdd = fixture.odds[0]?.values.find(value => value.value === "Draw")?.odd || 'N/A';
-        const awayOdd = fixture.odds[0]?.values.find(value => value.value === "Away")?.odd || 'N/A';
+        const homeOdd = fixture.odds.find(odd => odd.value === "Home")?.odd || 'N/A';
+        const drawOdd = fixture.odds.find(odd => odd.value === "Draw")?.odd || 'N/A';
+        const awayOdd = fixture.odds.find(odd => odd.value === "Away")?.odd || 'N/A';
 
         return {
-            home: fixture.teams.home.name,
-            away: fixture.teams.away.name,
-            date: new Date(fixture.fixture.date).toLocaleString(),
+            home: fixture.homeTeam.name,
+            away: fixture.awayTeam.name,
+            date: new Date(fixture.date).toLocaleString(),
             odd_home: homeOdd,
             odd_draw: drawOdd,
-            odd_visit: awayOdd
+            odd_visit: awayOdd,
+            fixture_id: fixture.id,
+            round: fixture.league.round,
+            league_name: fixture.league.name,
+            available_bonds: fixture.bonos_disponibles
         }
-    })
+    });
 
     const handleLoadMore = () => {
         setVisibleCount(prevCount => prevCount + 3)
@@ -56,12 +63,14 @@ const RenderCard = () => {
 
     const handleCardClick = (card) => {
         setSelectedCard(card)
-        console.log("Selected card:", card);
+        // console.log("Selected card:", card);
         
     }
 
     return (
         <div>
+            {/* <p>prueba</p>
+            {JSON.stringify(filteredFixtures)} */}
             {cardsData.slice(0, visibleCount).map((card, index) => (
                 <div key={index} onClick={() => handleCardClick(card)}>
                     <Card
@@ -71,6 +80,11 @@ const RenderCard = () => {
                         odd_home={card.odd_home}
                         odd_draw={card.odd_draw}
                         odd_visit={card.odd_visit}
+                        fixture_id={card.fixture_id}
+                        round={card.round}
+                        league_name={card.league_name}
+                        available_bonds={card.available_bonds}
+
                     />
                 </div>
             ))}

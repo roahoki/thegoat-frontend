@@ -13,8 +13,8 @@ const Fixtures = () => {
       <LeagueList />
       <DateSelector />
       <LeagueCard />
-      <BetModal />
       <RenderCard />
+      <BetModal />
     </div>
     </FixturesProvider>
   )
