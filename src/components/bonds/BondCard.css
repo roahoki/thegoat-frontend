@@ -1,0 +1,22 @@
+/* BondCard.css */
+
+.bond-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px 0;
+  }
+  
+  .bond-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bond-details {
+    margin-top: 16px;
+  }
+  
+  .bond-details p {
+    margin: 4px 0;
+  }
+  

@@ -1,25 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
+// bond.jsx
 
-const Bonds = () => {
-    const { user, isAuthenticated } = useAuth0();
-    const [sessionToken, setSessionToken] = useState('');
+import React from 'react';
+import RenderBond from './RenderBond';
 
-    useEffect(() => {
-        // Guardar un valor en localStorage
-        localStorage.setItem('sessionToken', 'your-session-token');
+const BondPage = () => {
+  // Replace this with the actual way you retrieve the user ID
+  const userId = useLocalStorage.getItem('userId');
 
-        // Leer el valor de localStorage
-        const token = localStorage.getItem('sessionToken');
-        setSessionToken(token);
-    }, []);
-
-    return (
-        <div>
-            {sessionToken}
-            
-        </div>
-    );
+  return (
+    <div>
+      <h1>Your Bonds</h1>
+      <RenderBond userId={userId} />
+    </div>
+  );
 };
 
-export default Bonds;
+export default BondPage;
