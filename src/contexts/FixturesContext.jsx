@@ -28,6 +28,7 @@ export const FixturesProvider = ({ children }) => {
 
             if (response.status === 200) {
                 const data = response.data;
+                console.log(data.billetera, "BILLETERA");
                 setBalance(data.billetera);
 
             } else {

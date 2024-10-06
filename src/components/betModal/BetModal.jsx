@@ -11,6 +11,7 @@ const BetModal = () => {
     const [selectedOdd, setSelectedOdd] = useState(null);
     const [selectedAmount, setSelectedAmount] = useState(1);
     const [selectedTeam, setSelectedTeam] = useState(null);
+    const userId = localStorage.getItem('userId');
     if (!selectedCard) return null;
 
     const handleClose = () => {
@@ -35,7 +36,7 @@ const BetModal = () => {
             deposit_token: "", // Asumiendo que no hay token de depósito
             datetime: new Date().toISOString(),
             quantity: selectedAmount,
-            user_id: 1, // Asumiendo un user_id de 1
+            usuarioId: userId, 
             status: 'pending',
         };
 

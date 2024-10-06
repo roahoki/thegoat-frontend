@@ -1,11 +1,12 @@
 // bond.jsx
 
 import React from 'react';
-import RenderBond from './RenderBond';
+import RenderBond from '../../components/bonds/RenderBond';
 
-const BondPage = () => {
+
+const Bonds = () => {
   // Replace this with the actual way you retrieve the user ID
-  const userId = useLocalStorage.getItem('userId');
+  const userId = localStorage.getItem('userId');
 
   return (
     <div>
@@ -15,4 +16,4 @@ const BondPage = () => {
   );
 };
 
-export default BondPage;
+export default Bonds;
