@@ -1,33 +1,38 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { FixturesContext } from '../../contexts/FixturesContext';
 import './BetModal.css';
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+
 const BetModal = () => {
-    const { selectedCard, setSelectedCard } = useContext(FixturesContext);
+    const { selectedCard, setSelectedCard, balance, setBalance } = useContext(FixturesContext);
 
     const [selectedOdd, setSelectedOdd] = useState(null);
     const [selectedAmount, setSelectedAmount] = useState(1);
-    const [betAmount, setBetAmount] = useState('');
-
+    const [selectedTeam, setSelectedTeam] = useState(null);
     if (!selectedCard) return null;
 
     const handleClose = () => {
         setSelectedCard(null);
-        setBetAmount('');
         setSelectedAmount(1);
         setSelectedOdd(null);
+        setSelectedTeam(null);
     };
 
     const handleBet = async () => {
+
+        const [day, month, year] = selectedCard.date.split(",")[0].split("-");
+        const formattedDate = `${year}-${month}-${day}`;
+
         const betRequest = {
             group_id: '15', // Asumiendo que el group_id es 15
-            fixture_id: selectedCard.id,
-            league_name: selectedCard.league,
+            fixture_id: selectedCard.fixture_id,
+            league_name: selectedCard.league_name,
             round: selectedCard.round,
-            date: selectedCard.date,
-            result: selectedOdd,
-            deposit_token: '', // Asumiendo que no hay token de depósito
+            date: formattedDate,
+            result: selectedTeam,
+            deposit_token: "", // Asumiendo que no hay token de depósito
             datetime: new Date().toISOString(),
             quantity: selectedAmount,
             user_id: 1, // Asumiendo un user_id de 1
@@ -35,31 +40,36 @@ const BetModal = () => {
         };
 
         console.log('Bet Request:', betRequest);
-        
 
-        // try {
-        //     const response = await axios.post('/api/requests', betRequest);
-        //     console.log('Bet Request Response:', response.data);
-        //     handleClose();
-        // } catch (error) {
-        //     console.error('Error creating bet request:', error);
-        // }
+        if (betRequest.quantity * 1000 > balance) {
+            console.log('No tienes suficiente saldo');
+            return;
+        } else {
+            try {
+                const response = await axios.post(`${BACKEND_URL}/requests`, betRequest);
+                console.log('Bet Request Response:', response.data);
+                handleClose();
+            } catch (error) {
+                console.error('Error creating bet request:', error);
+            }
+        }
     };
 
-    const handleOddSelection = (odd) => {
+    const handleOddSelection = (odd, team_name) => {
         setSelectedOdd(odd);
+        setSelectedTeam(team_name);
     };
 
     return (
         <div className="bet-modal">
             <div className="bet-modal-content">
                 <h3>{selectedCard.home} vs {selectedCard.away}</h3>
-                <p>X bonos disponibles</p>
+                <p>{selectedCard.available_bonds} bonos disponibles</p>
 
                 <div className='odds-options'>
                     <div
                         className={selectedOdd === selectedCard.odd_home ? 'selected' : ''}
-                        onClick={() => handleOddSelection(selectedCard.odd_home)}
+                        onClick={() => handleOddSelection(selectedCard.odd_home, selectedCard.home)}
                     >
                         <h5>{selectedCard.home}</h5>
                         <p>{selectedCard.odd_home}</p>
@@ -67,7 +77,7 @@ const BetModal = () => {
 
                     <div
                         className={selectedOdd === selectedCard.odd_visit ? 'selected' : ''}
-                        onClick={() => handleOddSelection(selectedCard.odd_visit)}
+                        onClick={() => handleOddSelection(selectedCard.odd_visit, selectedCard.away)}
                     >
                         <h5>{selectedCard.away}</h5>
                         <p>{selectedCard.odd_visit}</p>
@@ -75,7 +85,7 @@ const BetModal = () => {
 
                     <div
                         className={selectedOdd === selectedCard.odd_draw ? 'selected' : ''}
-                        onClick={() => handleOddSelection(selectedCard.odd_draw)}
+                        onClick={() => handleOddSelection(selectedCard.odd_draw, "---")}
                     >
                         <h5>Empate</h5>
                         <p>{selectedCard.odd_draw}</p>
@@ -84,13 +94,8 @@ const BetModal = () => {
 
                 <div className='user-bet-options'>
                     <div>
-                        <p>Saldo $X</p>
-                        <input
-                            type="number"
-                            placeholder="Monto de la apuesta"
-                            value={betAmount}
-                            onChange={(e) => setBetAmount(e.target.value)}
-                        />
+                        <p>Saldo ${balance}</p>
+                        <p>Costo por Bono $1000</p>
                     </div>
 
                     <div>

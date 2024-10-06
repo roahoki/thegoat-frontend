@@ -1,7 +1,7 @@
 import React from 'react'
 import './FixtureCard.css' 
 
-const Card = ({ home, away, date, odd_home, odd_draw, odd_visit }) => {
+const Card = ({ home, away, date, odd_home, odd_draw, odd_visit, fixture_id, round, league_name, available_bonds}) => {
     return (
         <div className="cardd">
 
@@ -13,7 +13,7 @@ const Card = ({ home, away, date, odd_home, odd_draw, odd_visit }) => {
 
             <div className='bond-container'>
                 <h3>bonos</h3>
-                <p>disponibles</p>
+                <p>{available_bonds} disponibles</p>
             </div>
 
             <div className='oddss'>

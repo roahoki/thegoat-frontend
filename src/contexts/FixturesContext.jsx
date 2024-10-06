@@ -13,13 +13,37 @@ export const FixturesProvider = ({ children }) => {
     const [selectedCard, setSelectedCard] = useState(null)
     const [loading, setLoading] = useState(true);
     const [fixturesData, setFixtures] = useState([]);
+    const [balance, setBalance] = useState(null);
+
+    const getBalance = async () => {
+        try {
+            const sessionToken = localStorage.getItem('sessionToken');
+            const userId = localStorage.getItem('userId');
+            const response = await axios.get(`${BACKEND_URL}/users/wallet/${userId}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sessionToken}`,
+                },
+            });
+
+            if (response.status === 200) {
+                const data = response.data;
+                setBalance(data.billetera);
+
+            } else {
+                console.error('Error getting the balance:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error getting the balance:', error);
+        }
+    }
 
 
     useEffect(() => {
         const fetchFixtures = async () => {
             try {
                 const response = await axios.get(`${BACKEND_URL}/fixtures/data`);
-                console.log(response.data);
+                // console.log(response.data);
                 setFixtures(response.data);
                 setLoading(false); // Se detiene el estado de carga
             } catch (error) {
@@ -28,8 +52,24 @@ export const FixturesProvider = ({ children }) => {
             }
         };
 
+
         fetchFixtures();
+        getBalance();
     }, []);
+
+
+    useEffect(() => {
+        const handleFocus = () => {
+            getBalance();
+        };
+
+        window.addEventListener('focus', handleFocus);
+
+        return () => {
+            window.removeEventListener('focus', handleFocus);
+        };
+    }, []);
+
 
     if (loading) {
         return <div>Cargando...</div>; 
@@ -37,7 +77,7 @@ export const FixturesProvider = ({ children }) => {
 
 
     return (
-        <FixturesContext.Provider value={{ selectedLeague, setSelectedLeague, selectedDate, setSelectedDate, selectedCard, setSelectedCard, fixturesData }}>
+        <FixturesContext.Provider value={{ selectedLeague, setSelectedLeague, selectedDate, setSelectedDate, selectedCard, setSelectedCard, fixturesData, balance, setBalance }}>
             {children}
         </FixturesContext.Provider>
     )

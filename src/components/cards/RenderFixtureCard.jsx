@@ -37,8 +37,7 @@ const RenderCard = () => {
 
         return isLeagueMatch && isDateMatch
     })
-    console.log(filteredFixtures);
-
+    // console.log(filteredFixtures)
     const cardsData = filteredFixtures.map(fixture => {
         const homeOdd = fixture.odds.find(odd => odd.value === "Home")?.odd || 'N/A';
         const drawOdd = fixture.odds.find(odd => odd.value === "Draw")?.odd || 'N/A';
@@ -50,7 +49,11 @@ const RenderCard = () => {
             date: new Date(fixture.date).toLocaleString(),
             odd_home: homeOdd,
             odd_draw: drawOdd,
-            odd_visit: awayOdd
+            odd_visit: awayOdd,
+            fixture_id: fixture.id,
+            round: fixture.league.round,
+            league_name: fixture.league.name,
+            available_bonds: fixture.bonos_disponibles
         }
     });
 
@@ -60,7 +63,7 @@ const RenderCard = () => {
 
     const handleCardClick = (card) => {
         setSelectedCard(card)
-        console.log("Selected card:", card);
+        // console.log("Selected card:", card);
         
     }
 
@@ -77,6 +80,11 @@ const RenderCard = () => {
                         odd_home={card.odd_home}
                         odd_draw={card.odd_draw}
                         odd_visit={card.odd_visit}
+                        fixture_id={card.fixture_id}
+                        round={card.round}
+                        league_name={card.league_name}
+                        available_bonds={card.available_bonds}
+
                     />
                 </div>
             ))}
