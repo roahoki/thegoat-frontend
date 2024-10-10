@@ -31,7 +31,7 @@ const BetModal = () => {
             fixture_id: selectedCard.fixture_id,
             league_name: selectedCard.league_name,
             round: selectedCard.round,
-            date: formattedDate,
+            date: day,
             result: selectedTeam,
             deposit_token: "", // Asumiendo que no hay token de depósito
             datetime: new Date().toISOString(),
