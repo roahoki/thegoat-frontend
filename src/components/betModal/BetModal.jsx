@@ -23,19 +23,19 @@ const BetModal = () => {
 
     const handleBet = async () => {
 
-        const [day, month, year] = selectedCard.date.split(",")[0].split("-");
-        const formattedDate = `${year}-${month}-${day}`;
+        const date = new Date(selectedCard.date);
+        const formattedDate = date.toISOString().split('T')[0]; 
 
         const betRequest = {
             group_id: '15', // Asumiendo que el group_id es 15
             fixture_id: selectedCard.fixture_id,
             league_name: selectedCard.league_name,
             round: selectedCard.round,
-            date: day,
+            date: formattedDate,
             result: selectedTeam,
             deposit_token: "", // Asumiendo que no hay token de depósito
             datetime: new Date().toISOString(),
-            quantity: selectedAmount,
+            quantity: parseInt(selectedAmount, 10),
             usuarioId: userId, 
             status: 'pending',
         };
