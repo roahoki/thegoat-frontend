@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { FixturesContext } from '../../contexts/FixturesContext';
 import './BetModal.css';
+import { parse, format } from 'date-fns';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
@@ -20,11 +21,36 @@ const BetModal = () => {
         setSelectedOdd(null);
         setSelectedTeam(null);
     };
+    const tryParseDate = (rawDate) => {
+        // Intentamos varios formatos comunes
+        const formats = [
+            'MM/dd/yyyy, h:mm:ss a', // Formato usado en Mac
+            'dd-MM-yyyy, h:mm:ss a', // Formato usado en Windows
+            'dd/MM/yyyy, h:mm:ss'    // Otro formato posible
+        ];
+    
+        let parsedDate = null;
+    
+        for (const fmt of formats) {
+            try {
+                parsedDate = parse(rawDate, fmt, new Date());
+                if (!isNaN(parsedDate)) break; // Si es válida, rompemos el ciclo
+            } catch (error) {
+                console.warn(`Formato fallido: ${fmt}`);
+            }
+        }
+    
+        if (!parsedDate || isNaN(parsedDate)) {
+            throw new Error('No se pudo interpretar la fecha');
+        }
+    
+        return parsedDate;
+    };
 
     const handleBet = async () => {
-
-        const date = new Date(selectedCard.date);
-        const formattedDate = date.toISOString().split('T')[0]; 
+        const date = tryParseDate(selectedCard.date);
+        const formattedDate = format(date, 'yyyy-MM-dd');
+        console.log('Formatted Date:', formattedDate);
 
         const betRequest = {
             group_id: '15', // Asumiendo que el group_id es 15
