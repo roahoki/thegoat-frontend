@@ -2,11 +2,11 @@
     "fixtures": [
         {
             "fixture": {
-                "id": 1208074,
-                "referee": "P. Bankes",
+                "id": 1208083,
+                "referee": "A. Madley",
                 "timezone": "UTC",
-                "date": "2024-09-28T14:00:00+00:00",
-                "timestamp": 1727532000,
+                "date": "2024-10-05T14:00:00+00:00",
+                "timestamp": 1728136800,
                 "status": {
                     "long": "Not Started",
                     "short": "NS",
@@ -18,192 +18,9 @@
                 "name": "Premier League",
                 "country": "England",
                 "logo": "https://media.api-sports.io/football/leagues/39.png",
-                "flag": "https://media.api-sports.io/flags/gb.svg",
+                "flag": "https://media.api-sports.io/flags/gb-eng.svg",
                 "season": 2024,
-                "round": "Regular Season - 6"
-            },
-            "teams": {
-                "home": {
-                    "id": 49,
-                    "name": "Chelsea",
-                    "logo": "https://media.api-sports.io/football/teams/49.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 51,
-                    "name": "Brighton",
-                    "logo": "https://media.api-sports.io/football/teams/51.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "1.72"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "4.30"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "4.55"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208071,
-                "referee": "M. Oliver",
-                "timezone": "UTC",
-                "date": "2024-09-30T19:00:00+00:00",
-                "timestamp": 1727722800,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 39,
-                "name": "Premier League",
-                "country": "England",
-                "logo": "https://media.api-sports.io/football/leagues/39.png",
-                "flag": "https://media.api-sports.io/flags/gb.svg",
-                "season": 2024,
-                "round": "Regular Season - 6"
-            },
-            "teams": {
-                "home": {
-                    "id": 35,
-                    "name": "Bournemouth",
-                    "logo": "https://media.api-sports.io/football/teams/35.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 41,
-                    "name": "Southampton",
-                    "logo": "https://media.api-sports.io/football/teams/41.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "1.65"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "4.40"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "5.00"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208072,
-                "referee": "S. Barrott",
-                "timezone": "UTC",
-                "date": "2024-09-28T14:00:00+00:00",
-                "timestamp": 1727532000,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 39,
-                "name": "Premier League",
-                "country": "England",
-                "logo": "https://media.api-sports.io/football/leagues/39.png",
-                "flag": "https://media.api-sports.io/flags/gb.svg",
-                "season": 2024,
-                "round": "Regular Season - 6"
-            },
-            "teams": {
-                "home": {
-                    "id": 42,
-                    "name": "Arsenal",
-                    "logo": "https://media.api-sports.io/football/teams/42.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 46,
-                    "name": "Leicester",
-                    "logo": "https://media.api-sports.io/football/teams/46.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "1.19"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "7.80"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "17.00"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208073,
-                "referee": "S. Hooper",
-                "timezone": "UTC",
-                "date": "2024-09-28T14:00:00+00:00",
-                "timestamp": 1727532000,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 39,
-                "name": "Premier League",
-                "country": "England",
-                "logo": "https://media.api-sports.io/football/leagues/39.png",
-                "flag": "https://media.api-sports.io/flags/gb.svg",
-                "season": 2024,
-                "round": "Regular Season - 6"
+                "round": "Regular Season - 7"
             },
             "teams": {
                 "home": {
@@ -213,9 +30,9 @@
                     "winner": null
                 },
                 "away": {
-                    "id": 48,
-                    "name": "West Ham",
-                    "logo": "https://media.api-sports.io/football/teams/48.png",
+                    "id": 39,
+                    "name": "Wolves",
+                    "logo": "https://media.api-sports.io/football/teams/39.png",
                     "winner": null
                 }
             },
@@ -230,7 +47,68 @@
                     "values": [
                         {
                             "value": "Home",
-                            "odd": "2.28"
+                            "odd": "1.98"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "3.80"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "3.80"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208082,
+                "referee": "R. Jones",
+                "timezone": "UTC",
+                "date": "2024-10-06T13:00:00+00:00",
+                "timestamp": 1728219600,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 39,
+                "name": "Premier League",
+                "country": "England",
+                "logo": "https://media.api-sports.io/football/leagues/39.png",
+                "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+                "season": 2024,
+                "round": "Regular Season - 7"
+            },
+            "teams": {
+                "home": {
+                    "id": 66,
+                    "name": "Aston Villa",
+                    "logo": "https://media.api-sports.io/football/teams/66.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 33,
+                    "name": "Manchester United",
+                    "logo": "https://media.api-sports.io/football/teams/33.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "2.45"
                         },
                         {
                             "value": "Draw",
@@ -238,7 +116,7 @@
                         },
                         {
                             "value": "Away",
-                            "odd": "3.15"
+                            "odd": "2.85"
                         }
                     ]
                 }
@@ -246,11 +124,11 @@
         },
         {
             "fixture": {
-                "id": 1208075,
-                "referee": "A. Madley",
+                "id": 1208084,
+                "referee": "D. Coote",
                 "timezone": "UTC",
-                "date": "2024-09-28T14:00:00+00:00",
-                "timestamp": 1727532000,
+                "date": "2024-10-06T15:30:00+00:00",
+                "timestamp": 1728228600,
                 "status": {
                     "long": "Not Started",
                     "short": "NS",
@@ -262,978 +140,15 @@
                 "name": "Premier League",
                 "country": "England",
                 "logo": "https://media.api-sports.io/football/leagues/39.png",
-                "flag": "https://media.api-sports.io/flags/gb.svg",
-                "season": 2024,
-                "round": "Regular Season - 6"
-            },
-            "teams": {
-                "home": {
-                    "id": 45,
-                    "name": "Everton",
-                    "logo": "https://media.api-sports.io/football/teams/45.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 52,
-                    "name": "Crystal Palace",
-                    "logo": "https://media.api-sports.io/football/teams/52.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "2.78"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "3.50"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "2.58"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208076,
-                "referee": "S. Attwell",
-                "timezone": "UTC",
-                "date": "2024-09-29T13:00:00+00:00",
-                "timestamp": 1727614800,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 39,
-                "name": "Premier League",
-                "country": "England",
-                "logo": "https://media.api-sports.io/football/leagues/39.png",
-                "flag": "https://media.api-sports.io/flags/gb.svg",
-                "season": 2024,
-                "round": "Regular Season - 6"
-            },
-            "teams": {
-                "home": {
-                    "id": 57,
-                    "name": "Ipswich",
-                    "logo": "https://media.api-sports.io/football/teams/57.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 66,
-                    "name": "Aston Villa",
-                    "logo": "https://media.api-sports.io/football/teams/66.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "4.10"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "3.85"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "1.90"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208078,
-                "referee": "J. Gillett",
-                "timezone": "UTC",
-                "date": "2024-09-28T11:30:00+00:00",
-                "timestamp": 1727523000,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 39,
-                "name": "Premier League",
-                "country": "England",
-                "logo": "https://media.api-sports.io/football/leagues/39.png",
-                "flag": "https://media.api-sports.io/flags/gb.svg",
-                "season": 2024,
-                "round": "Regular Season - 6"
-            },
-            "teams": {
-                "home": {
-                    "id": 34,
-                    "name": "Newcastle",
-                    "logo": "https://media.api-sports.io/football/teams/34.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 50,
-                    "name": "Manchester City",
-                    "logo": "https://media.api-sports.io/football/teams/50.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "5.10"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "4.55"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "1.62"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208079,
-                "referee": "J. Smith",
-                "timezone": "UTC",
-                "date": "2024-09-28T14:00:00+00:00",
-                "timestamp": 1727532000,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 39,
-                "name": "Premier League",
-                "country": "England",
-                "logo": "https://media.api-sports.io/football/leagues/39.png",
-                "flag": "https://media.api-sports.io/flags/gb.svg",
-                "season": 2024,
-                "round": "Regular Season - 6"
-            },
-            "teams": {
-                "home": {
-                    "id": 65,
-                    "name": "Nottingham Forest",
-                    "logo": "https://media.api-sports.io/football/teams/65.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 36,
-                    "name": "Fulham",
-                    "logo": "https://media.api-sports.io/football/teams/36.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "2.42"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "3.45"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "3.05"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208080,
-                "referee": "A. Taylor",
-                "timezone": "UTC",
-                "date": "2024-09-28T16:30:00+00:00",
-                "timestamp": 1727541000,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 39,
-                "name": "Premier League",
-                "country": "England",
-                "logo": "https://media.api-sports.io/football/leagues/39.png",
-                "flag": "https://media.api-sports.io/flags/gb.svg",
-                "season": 2024,
-                "round": "Regular Season - 6"
-            },
-            "teams": {
-                "home": {
-                    "id": 39,
-                    "name": "Wolves",
-                    "logo": "https://media.api-sports.io/football/teams/39.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 40,
-                    "name": "Liverpool",
-                    "logo": "https://media.api-sports.io/football/teams/40.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "8.00"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "5.55"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "1.38"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208553,
-                "referee": "Víctor García",
-                "timezone": "UTC",
-                "date": "2024-09-26T19:00:00+00:00",
-                "timestamp": 1727377200,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
+                "flag": "https://media.api-sports.io/flags/gb-eng.svg",
                 "season": 2024,
                 "round": "Regular Season - 7"
             },
             "teams": {
                 "home": {
-                    "id": 538,
-                    "name": "Celta Vigo",
-                    "logo": "https://media.api-sports.io/football/teams/538.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 530,
-                    "name": "Atletico Madrid",
-                    "logo": "https://media.api-sports.io/football/teams/530.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "3.75"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "3.60"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "2.00"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208548,
-                "referee": "Pablo González",
-                "timezone": "UTC",
-                "date": "2024-09-25T19:00:00+00:00",
-                "timestamp": 1727290800,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 7"
-            },
-            "teams": {
-                "home": {
-                    "id": 529,
-                    "name": "Barcelona",
-                    "logo": "https://media.api-sports.io/football/teams/529.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 546,
-                    "name": "Getafe",
-                    "logo": "https://media.api-sports.io/football/teams/546.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "1.26"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "6.00"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "12.00"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208556,
-                "referee": "Alejandro Muñiz Ruiz, Spain",
-                "timezone": "UTC",
-                "date": "2024-09-24T19:00:00+00:00",
-                "timestamp": 1727204400,
-                "status": {
-                    "long": "Match Finished",
-                    "short": "FT",
-                    "elapsed": 90
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 7"
-            },
-            "teams": {
-                "home": {
-                    "id": 541,
-                    "name": "Real Madrid",
-                    "logo": "https://media.api-sports.io/football/teams/541.png",
-                    "winner": true
-                },
-                "away": {
-                    "id": 542,
-                    "name": "Alaves",
-                    "logo": "https://media.api-sports.io/football/teams/542.png",
-                    "winner": false
-                }
-            },
-            "goals": {
-                "home": 3,
-                "away": 2
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "1.17"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "8.00"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "17.00"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208560,
-                "referee": null,
-                "timezone": "UTC",
-                "date": "2024-09-28T16:30:00+00:00",
-                "timestamp": 1727541000,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 8"
-            },
-            "teams": {
-                "home": {
-                    "id": 548,
-                    "name": "Real Sociedad",
-                    "logo": "https://media.api-sports.io/football/teams/548.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 532,
-                    "name": "Valencia",
-                    "logo": "https://media.api-sports.io/football/teams/532.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "1.90"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "3.30"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "4.75"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208561,
-                "referee": null,
-                "timezone": "UTC",
-                "date": "2024-09-28T19:00:00+00:00",
-                "timestamp": 1727550000,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 8"
-            },
-            "teams": {
-                "home": {
-                    "id": 727,
-                    "name": "Osasuna",
-                    "logo": "https://media.api-sports.io/football/teams/727.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 529,
-                    "name": "Barcelona",
-                    "logo": "https://media.api-sports.io/football/teams/529.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "6.50"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "5.00"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "1.47"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208564,
-                "referee": null,
-                "timezone": "UTC",
-                "date": "2024-09-28T12:00:00+00:00",
-                "timestamp": 1727524800,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 8"
-            },
-            "teams": {
-                "home": {
-                    "id": 546,
-                    "name": "Getafe",
-                    "logo": "https://media.api-sports.io/football/teams/546.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 542,
-                    "name": "Alaves",
-                    "logo": "https://media.api-sports.io/football/teams/542.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "2.60"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "2.95"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "3.20"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208549,
-                "referee": "Juan Martinez Munuera, Spain",
-                "timezone": "UTC",
-                "date": "2024-09-25T17:00:00+00:00",
-                "timestamp": 1727283600,
-                "status": {
-                    "long": "First Half",
-                    "short": "1H",
-                    "elapsed": 34
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 7"
-            },
-            "teams": {
-                "home": {
-                    "id": 547,
-                    "name": "Girona",
-                    "logo": "https://media.api-sports.io/football/teams/547.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 728,
-                    "name": "Rayo Vallecano",
-                    "logo": "https://media.api-sports.io/football/teams/728.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": 0,
-                "away": 0
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "1.78"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "3.75"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "4.75"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208565,
-                "referee": null,
-                "timezone": "UTC",
-                "date": "2024-09-28T14:15:00+00:00",
-                "timestamp": 1727532900,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 8"
-            },
-            "teams": {
-                "home": {
-                    "id": 728,
-                    "name": "Rayo Vallecano",
-                    "logo": "https://media.api-sports.io/football/teams/728.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 537,
-                    "name": "Leganes",
-                    "logo": "https://media.api-sports.io/football/teams/537.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 0,
-                    "name": "No odd",
-                    "values": []
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208563,
-                "referee": null,
-                "timezone": "UTC",
-                "date": "2024-09-30T19:00:00+00:00",
-                "timestamp": 1727722800,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 8"
-            },
-            "teams": {
-                "home": {
-                    "id": 533,
-                    "name": "Villarreal",
-                    "logo": "https://media.api-sports.io/football/teams/533.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 534,
-                    "name": "Las Palmas",
-                    "logo": "https://media.api-sports.io/football/teams/534.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "1.52"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "4.75"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "6.00"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1212916,
-                "referee": "Alejandro Quintero",
-                "timezone": "UTC",
-                "date": "2024-09-26T17:00:00+00:00",
-                "timestamp": 1727370000,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 7"
-            },
-            "teams": {
-                "home": {
-                    "id": 540,
-                    "name": "Espanyol",
-                    "logo": "https://media.api-sports.io/football/teams/540.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 533,
-                    "name": "Villarreal",
-                    "logo": "https://media.api-sports.io/football/teams/533.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "3.40"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "3.40"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "2.20"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1212917,
-                "referee": null,
-                "timezone": "UTC",
-                "date": "2024-09-29T16:30:00+00:00",
-                "timestamp": 1727627400,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 8"
-            },
-            "teams": {
-                "home": {
-                    "id": 543,
-                    "name": "Real Betis",
-                    "logo": "https://media.api-sports.io/football/teams/543.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 540,
-                    "name": "Espanyol",
-                    "logo": "https://media.api-sports.io/football/teams/540.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "1.80"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "3.60"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "4.75"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208077,
-                "referee": "C. Kavanagh",
-                "timezone": "UTC",
-                "date": "2024-09-29T15:30:00+00:00",
-                "timestamp": 1727623800,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 39,
-                "name": "Premier League",
-                "country": "England",
-                "logo": "https://media.api-sports.io/football/leagues/39.png",
-                "flag": "https://media.api-sports.io/flags/gb.svg",
-                "season": 2024,
-                "round": "Regular Season - 6"
-            },
-            "teams": {
-                "home": {
-                    "id": 33,
-                    "name": "Manchester United",
-                    "logo": "https://media.api-sports.io/football/teams/33.png",
+                    "id": 51,
+                    "name": "Brighton",
+                    "logo": "https://media.api-sports.io/football/teams/51.png",
                     "winner": null
                 },
                 "away": {
@@ -1254,15 +169,15 @@
                     "values": [
                         {
                             "value": "Home",
-                            "odd": "2.35"
+                            "odd": "2.65"
                         },
                         {
                             "value": "Draw",
-                            "odd": "4.05"
+                            "odd": "3.95"
                         },
                         {
                             "value": "Away",
-                            "odd": "2.80"
+                            "odd": "2.50"
                         }
                     ]
                 }
@@ -1270,11 +185,377 @@
         },
         {
             "fixture": {
-                "id": 1208554,
-                "referee": "José Sánchez",
+                "id": 1208081,
+                "referee": "T. Harrington",
                 "timezone": "UTC",
-                "date": "2024-09-26T17:00:00+00:00",
-                "timestamp": 1727370000,
+                "date": "2024-10-05T14:00:00+00:00",
+                "timestamp": 1728136800,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 39,
+                "name": "Premier League",
+                "country": "England",
+                "logo": "https://media.api-sports.io/football/leagues/39.png",
+                "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+                "season": 2024,
+                "round": "Regular Season - 7"
+            },
+            "teams": {
+                "home": {
+                    "id": 42,
+                    "name": "Arsenal",
+                    "logo": "https://media.api-sports.io/football/teams/42.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 41,
+                    "name": "Southampton",
+                    "logo": "https://media.api-sports.io/football/teams/41.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "1.18"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "9.50"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "13.00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208089,
+                "referee": "P. Bankes",
+                "timezone": "UTC",
+                "date": "2024-10-05T14:00:00+00:00",
+                "timestamp": 1728136800,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 39,
+                "name": "Premier League",
+                "country": "England",
+                "logo": "https://media.api-sports.io/football/leagues/39.png",
+                "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+                "season": 2024,
+                "round": "Regular Season - 7"
+            },
+            "teams": {
+                "home": {
+                    "id": 50,
+                    "name": "Manchester City",
+                    "logo": "https://media.api-sports.io/football/teams/50.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 36,
+                    "name": "Fulham",
+                    "logo": "https://media.api-sports.io/football/teams/36.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "1.23"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "7.40"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "12.00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208087,
+                "referee": "C. Pawson",
+                "timezone": "UTC",
+                "date": "2024-10-05T16:30:00+00:00",
+                "timestamp": 1728145800,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 39,
+                "name": "Premier League",
+                "country": "England",
+                "logo": "https://media.api-sports.io/football/leagues/39.png",
+                "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+                "season": 2024,
+                "round": "Regular Season - 7"
+            },
+            "teams": {
+                "home": {
+                    "id": 45,
+                    "name": "Everton",
+                    "logo": "https://media.api-sports.io/football/teams/45.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 34,
+                    "name": "Newcastle",
+                    "logo": "https://media.api-sports.io/football/teams/34.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "3.20"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "3.75"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "2.22"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208086,
+                "referee": "S. Hooper",
+                "timezone": "UTC",
+                "date": "2024-10-05T11:30:00+00:00",
+                "timestamp": 1728127800,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 39,
+                "name": "Premier League",
+                "country": "England",
+                "logo": "https://media.api-sports.io/football/leagues/39.png",
+                "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+                "season": 2024,
+                "round": "Regular Season - 7"
+            },
+            "teams": {
+                "home": {
+                    "id": 52,
+                    "name": "Crystal Palace",
+                    "logo": "https://media.api-sports.io/football/teams/52.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 40,
+                    "name": "Liverpool",
+                    "logo": "https://media.api-sports.io/football/teams/40.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "5.90"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "4.75"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "1.55"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208088,
+                "referee": "D. Bond",
+                "timezone": "UTC",
+                "date": "2024-10-05T14:00:00+00:00",
+                "timestamp": 1728136800,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 39,
+                "name": "Premier League",
+                "country": "England",
+                "logo": "https://media.api-sports.io/football/leagues/39.png",
+                "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+                "season": 2024,
+                "round": "Regular Season - 7"
+            },
+            "teams": {
+                "home": {
+                    "id": 46,
+                    "name": "Leicester",
+                    "logo": "https://media.api-sports.io/football/teams/46.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 35,
+                    "name": "Bournemouth",
+                    "logo": "https://media.api-sports.io/football/teams/35.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "3.05"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "3.75"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "2.30"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208090,
+                "referee": "A. Taylor",
+                "timezone": "UTC",
+                "date": "2024-10-05T14:00:00+00:00",
+                "timestamp": 1728136800,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 39,
+                "name": "Premier League",
+                "country": "England",
+                "logo": "https://media.api-sports.io/football/leagues/39.png",
+                "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+                "season": 2024,
+                "round": "Regular Season - 7"
+            },
+            "teams": {
+                "home": {
+                    "id": 48,
+                    "name": "West Ham",
+                    "logo": "https://media.api-sports.io/football/teams/48.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 57,
+                    "name": "Ipswich",
+                    "logo": "https://media.api-sports.io/football/teams/57.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "1.80"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "4.10"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "4.35"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208569,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-04T19:00:00+00:00",
+                "timestamp": 1728068400,
                 "status": {
                     "long": "Not Started",
                     "short": "NS",
@@ -1288,13 +569,257 @@
                 "logo": "https://media.api-sports.io/football/leagues/140.png",
                 "flag": "https://media.api-sports.io/flags/es.svg",
                 "season": 2024,
-                "round": "Regular Season - 7"
+                "round": "Regular Season - 9"
             },
             "teams": {
                 "home": {
-                    "id": 534,
-                    "name": "Las Palmas",
-                    "logo": "https://media.api-sports.io/football/teams/534.png",
+                    "id": 537,
+                    "name": "Leganes",
+                    "logo": "https://media.api-sports.io/football/teams/537.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 532,
+                    "name": "Valencia",
+                    "logo": "https://media.api-sports.io/football/teams/532.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "2.85"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "2.90"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "2.90"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208567,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-05T19:00:00+00:00",
+                "timestamp": 1728154800,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https://media.api-sports.io/football/leagues/140.png",
+                "flag": "https://media.api-sports.io/flags/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 541,
+                    "name": "Real Madrid",
+                    "logo": "https://media.api-sports.io/football/teams/541.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 533,
+                    "name": "Villarreal",
+                    "logo": "https://media.api-sports.io/football/teams/533.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "1.20"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "8.00"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "13.00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208566,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-05T14:15:00+00:00",
+                "timestamp": 1728137700,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https://media.api-sports.io/football/leagues/140.png",
+                "flag": "https://media.api-sports.io/flags/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 546,
+                    "name": "Getafe",
+                    "logo": "https://media.api-sports.io/football/teams/546.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 727,
+                    "name": "Osasuna",
+                    "logo": "https://media.api-sports.io/football/teams/727.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "2.30"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "3.00"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "3.75"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208568,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-06T14:15:00+00:00",
+                "timestamp": 1728224100,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https://media.api-sports.io/football/leagues/140.png",
+                "flag": "https://media.api-sports.io/flags/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 542,
+                    "name": "Alaves",
+                    "logo": "https://media.api-sports.io/football/teams/542.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 529,
+                    "name": "Barcelona",
+                    "logo": "https://media.api-sports.io/football/teams/529.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "5.50"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "4.33"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "1.60"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208572,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-06T16:30:00+00:00",
+                "timestamp": 1728232200,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https://media.api-sports.io/football/leagues/140.png",
+                "flag": "https://media.api-sports.io/flags/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 536,
+                    "name": "Sevilla",
+                    "logo": "https://media.api-sports.io/football/teams/536.png",
                     "winner": null
                 },
                 "away": {
@@ -1315,15 +840,15 @@
                     "values": [
                         {
                             "value": "Home",
-                            "odd": "3.10"
+                            "odd": "2.65"
                         },
                         {
                             "value": "Draw",
-                            "odd": "3.30"
+                            "odd": "3.25"
                         },
                         {
                             "value": "Away",
-                            "odd": "2.45"
+                            "odd": "2.85"
                         }
                     ]
                 }
@@ -1331,11 +856,11 @@
         },
         {
             "fixture": {
-                "id": 1208562,
+                "id": 1208573,
                 "referee": null,
                 "timezone": "UTC",
-                "date": "2024-09-27T19:00:00+00:00",
-                "timestamp": 1727463600,
+                "date": "2024-10-05T16:30:00+00:00",
+                "timestamp": 1728145800,
                 "status": {
                     "long": "Not Started",
                     "short": "NS",
@@ -1349,13 +874,318 @@
                 "logo": "https://media.api-sports.io/football/leagues/140.png",
                 "flag": "https://media.api-sports.io/flags/es.svg",
                 "season": 2024,
-                "round": "Regular Season - 8"
+                "round": "Regular Season - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 534,
+                    "name": "Las Palmas",
+                    "logo": "https://media.api-sports.io/football/teams/534.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 538,
+                    "name": "Celta Vigo",
+                    "logo": "https://media.api-sports.io/football/teams/538.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "2.90"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "3.50"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "2.45"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208574,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-05T16:30:00+00:00",
+                "timestamp": 1728145800,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https://media.api-sports.io/football/leagues/140.png",
+                "flag": "https://media.api-sports.io/flags/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 9"
             },
             "teams": {
                 "home": {
                     "id": 720,
                     "name": "Valladolid",
                     "logo": "https://media.api-sports.io/football/teams/720.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 728,
+                    "name": "Rayo Vallecano",
+                    "logo": "https://media.api-sports.io/football/teams/728.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "2.95"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "3.00"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "2.70"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208570,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-06T12:00:00+00:00",
+                "timestamp": 1728216000,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https://media.api-sports.io/football/leagues/140.png",
+                "flag": "https://media.api-sports.io/flags/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 547,
+                    "name": "Girona",
+                    "logo": "https://media.api-sports.io/football/teams/547.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 531,
+                    "name": "Athletic Club",
+                    "logo": "https://media.api-sports.io/football/teams/531.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "2.45"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "3.40"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "3.00"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208571,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-06T19:00:00+00:00",
+                "timestamp": 1728241200,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https://media.api-sports.io/football/leagues/140.png",
+                "flag": "https://media.api-sports.io/flags/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 548,
+                    "name": "Real Sociedad",
+                    "logo": "https://media.api-sports.io/football/teams/548.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 530,
+                    "name": "Atletico Madrid",
+                    "logo": "https://media.api-sports.io/football/teams/530.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "3.40"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "3.10"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "2.35"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1208085,
+                "referee": "C. Kavanagh",
+                "timezone": "UTC",
+                "date": "2024-10-06T13:00:00+00:00",
+                "timestamp": 1728219600,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 39,
+                "name": "Premier League",
+                "country": "England",
+                "logo": "https://media.api-sports.io/football/leagues/39.png",
+                "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+                "season": 2024,
+                "round": "Regular Season - 7"
+            },
+            "teams": {
+                "home": {
+                    "id": 49,
+                    "name": "Chelsea",
+                    "logo": "https://media.api-sports.io/football/teams/49.png",
+                    "winner": null
+                },
+                "away": {
+                    "id": 65,
+                    "name": "Nottingham Forest",
+                    "logo": "https://media.api-sports.io/football/teams/65.png",
+                    "winner": null
+                }
+            },
+            "goals": {
+                "home": null,
+                "away": null
+            },
+            "odds": [
+                {
+                    "id": 1,
+                    "name": "Match Winner",
+                    "values": [
+                        {
+                            "value": "Home",
+                            "odd": "1.50"
+                        },
+                        {
+                            "value": "Draw",
+                            "odd": "4.85"
+                        },
+                        {
+                            "value": "Away",
+                            "odd": "6.40"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "fixture": {
+                "id": 1212918,
+                "referee": null,
+                "timezone": "UTC",
+                "date": "2024-10-05T12:00:00+00:00",
+                "timestamp": 1728129600,
+                "status": {
+                    "long": "Not Started",
+                    "short": "NS",
+                    "elapsed": null
+                }
+            },
+            "league": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "logo": "https://media.api-sports.io/football/leagues/140.png",
+                "flag": "https://media.api-sports.io/flags/es.svg",
+                "season": 2024,
+                "round": "Regular Season - 9"
+            },
+            "teams": {
+                "home": {
+                    "id": 540,
+                    "name": "Espanyol",
+                    "logo": "https://media.api-sports.io/football/teams/540.png",
                     "winner": null
                 },
                 "away": {
@@ -1376,187 +1206,17 @@
                     "values": [
                         {
                             "value": "Home",
-                            "odd": "3.00"
+                            "odd": "2.90"
                         },
                         {
                             "value": "Draw",
-                            "odd": "3.00"
+                            "odd": "2.95"
                         },
                         {
                             "value": "Away",
-                            "odd": "2.70"
+                            "odd": "2.80"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208557,
-                "referee": null,
-                "timezone": "UTC",
-                "date": "2024-09-29T14:15:00+00:00",
-                "timestamp": 1727619300,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 8"
-            },
-            "teams": {
-                "home": {
-                    "id": 531,
-                    "name": "Athletic Club",
-                    "logo": "https://media.api-sports.io/football/teams/531.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 536,
-                    "name": "Sevilla",
-                    "logo": "https://media.api-sports.io/football/teams/536.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "1.72"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "4.00"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "5.00"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208558,
-                "referee": null,
-                "timezone": "UTC",
-                "date": "2024-09-29T19:00:00+00:00",
-                "timestamp": 1727636400,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 8"
-            },
-            "teams": {
-                "home": {
-                    "id": 530,
-                    "name": "Atletico Madrid",
-                    "logo": "https://media.api-sports.io/football/teams/530.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 541,
-                    "name": "Real Madrid",
-                    "logo": "https://media.api-sports.io/football/teams/541.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 1,
-                    "name": "Match Winner",
-                    "values": [
-                        {
-                            "value": "Home",
-                            "odd": "3.00"
-                        },
-                        {
-                            "value": "Draw",
-                            "odd": "3.60"
-                        },
-                        {
-                            "value": "Away",
-                            "odd": "2.35"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "fixture": {
-                "id": 1208559,
-                "referee": null,
-                "timezone": "UTC",
-                "date": "2024-09-29T12:00:00+00:00",
-                "timestamp": 1727611200,
-                "status": {
-                    "long": "Not Started",
-                    "short": "NS",
-                    "elapsed": null
-                }
-            },
-            "league": {
-                "id": 140,
-                "name": "La Liga",
-                "country": "Spain",
-                "logo": "https://media.api-sports.io/football/leagues/140.png",
-                "flag": "https://media.api-sports.io/flags/es.svg",
-                "season": 2024,
-                "round": "Regular Season - 8"
-            },
-            "teams": {
-                "home": {
-                    "id": 538,
-                    "name": "Celta Vigo",
-                    "logo": "https://media.api-sports.io/football/teams/538.png",
-                    "winner": null
-                },
-                "away": {
-                    "id": 547,
-                    "name": "Girona",
-                    "logo": "https://media.api-sports.io/football/teams/547.png",
-                    "winner": null
-                }
-            },
-            "goals": {
-                "home": null,
-                "away": null
-            },
-            "odds": [
-                {
-                    "id": 0,
-                    "name": "No odd",
-                    "values": []
                 }
             ]
         }

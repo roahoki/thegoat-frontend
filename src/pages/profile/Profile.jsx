@@ -28,7 +28,6 @@ const Profile = () => {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${sessionToken}`,
-                        
                     },
                 });
 
@@ -36,6 +35,7 @@ const Profile = () => {
                     const data = response.data;
                      // Convertir la respuesta a JSON
                     setBalance(data.billetera); // Asegúrate de que 'balance' es el campo correcto
+                    console.log(data.billetera, "FUNCIONANDO");
                 } else {
                     console.error('Error getting the balance:', response.statusText);
                 }
