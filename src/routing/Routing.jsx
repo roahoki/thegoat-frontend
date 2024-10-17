@@ -5,6 +5,7 @@ import Header from '../components/header/Header'
 import Bonds from '../pages/bonds/Bonds'
 import Fixtures from '../pages/Fixtures'
 import Profile from '../pages/profile/Profile'
+import PurchaseCompleted from '../pages/purchase-completed/PurchaseCompleted'
 
 
 const Routing = () => {
@@ -17,6 +18,7 @@ const Routing = () => {
                 <Route path="/bonds" element={<Bonds />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/fixtures" element={<Fixtures />} />
+                <Route path="/purchase-completed" element={<PurchaseCompleted />} />
                 <Route path="*" element={<h1>Not Found</h1>} />
             </Routes>
         </BrowserRouter>
