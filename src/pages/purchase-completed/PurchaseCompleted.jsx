@@ -1,16 +1,17 @@
 import React from 'react';
 import { useQuery } from "@tanstack/react-query";
 import { useSearchParams, Link } from "react-router-dom";
-import { commitTransaction } from "commitTransaction";
+import { commitTransaction } from "./commitTransaction";
 
 function PurchaseCompleted() {
-  const [searchParams] = useSearchParams();
-
-  // Captura el `token_ws` que Webpay devuelve en la URL después del pago
-  const { data, isLoading } = useQuery({
-    queryKey: ['completed-purchase'],
-    queryFn: () => commitTransaction({ token: searchParams.get('token_ws') || '' }),
-  });
+   const [searchParams] = useSearchParams();
+   const token_ws = searchParams.get('token_ws') || '';
+   const request_id = localStorage.getItem('request_id') || '';  // Recuperar el request_id del localStorage
+  
+   const { data, isLoading } = useQuery({
+      queryKey: ['completed-purchase'],
+      queryFn: () => commitTransaction({ token: token_ws, request_id })  // Enviar ambos: token_ws y request_id
+   });
 
   if (isLoading) {
     return <div>Loading...</div>;
