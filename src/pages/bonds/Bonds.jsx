@@ -5,7 +5,6 @@ import RenderBond from '../../components/bonds/RenderBond';
 
 
 const Bonds = () => {
-  // Replace this with the actual way you retrieve the user ID
   const userId = localStorage.getItem('userId');
 
   return (
