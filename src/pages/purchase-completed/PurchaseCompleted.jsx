@@ -6,11 +6,10 @@ import { commitTransaction } from "./commitTransaction";
 function PurchaseCompleted() {
    const [searchParams] = useSearchParams();
    const token_ws = searchParams.get('token_ws') || '';
-   const request_id = localStorage.getItem('request_id') || '';  // Recuperar el request_id del localStorage
   
    const { data, isLoading } = useQuery({
       queryKey: ['completed-purchase'],
-      queryFn: () => commitTransaction({ token: token_ws, request_id })  // Enviar ambos: token_ws y request_id
+      queryFn: () => commitTransaction({ token: token_ws })
    });
 
   if (isLoading) {
