@@ -14,7 +14,8 @@ const Header = () => {
       <nav className="navbar">
         <a href="/">HOME</a>
         <a href="/fixtures">BET</a>
-        <a href="/bonds">BONOS</a>
+        <a href="/bonds">MIS BONOS</a>
+        <a href="/recommendations">HOT BETS</a>
         <a href="/profile">PERFIL</a>
         
         
