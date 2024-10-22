@@ -31,7 +31,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: "us-east-2"
       run: |
-        aws s3 sync build/ s3://thegoatbet --delete
+        aws s3 sync dist/ s3://thegoatbet --delete
 
     - name: Invalidate CloudFront cache
       env:
