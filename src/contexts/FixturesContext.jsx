@@ -28,8 +28,8 @@ export const FixturesProvider = ({ children }) => {
 
             if (response.status === 200) {
                 const data = response.data;
-                console.log(data.billetera, "BILLETERA");
-                setBalance(data.billetera);
+                console.log(data.wallet, "wallet");
+                setBalance(data.wallet);
 
             } else {
                 console.error('Error getting the balance:', response.statusText);

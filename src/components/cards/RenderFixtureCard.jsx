@@ -53,7 +53,7 @@ const RenderCard = () => {
             fixture_id: fixture.id,
             round: fixture.league.round,
             league_name: fixture.league.name,
-            available_bonds: fixture.bonos_disponibles
+            available_bonds: fixture.available_bonds
         }
     });
 

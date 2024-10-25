@@ -62,7 +62,7 @@ const BetModal = () => {
             deposit_token: "", // Asumiendo que no hay token de depósito
             datetime: new Date().toISOString(),
             quantity: parseInt(selectedAmount, 10),
-            usuarioId: userId, 
+            user_id: userId, 
             status: 'pending',
         };
 
