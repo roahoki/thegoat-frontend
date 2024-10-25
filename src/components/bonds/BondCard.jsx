@@ -15,7 +15,7 @@ const BondCard = ({
   datetime,
   quantity,
   seller,
-  usuarioId,
+  user_id,
   status,
   ip_address,
   location,
@@ -36,7 +36,7 @@ const BondCard = ({
         <p><strong>Deposit Token:</strong> {deposit_token}</p>
         <p><strong>Quantity:</strong> {quantity}</p>
         <p><strong>Seller:</strong> {seller}</p>
-        <p><strong>User ID:</strong> {usuarioId}</p>
+        <p><strong>User ID:</strong> {user_id}</p>
         <p><strong>IP Address:</strong> {ip_address}</p>
         <p><strong>Location:</strong> {location}</p>
       </div>
