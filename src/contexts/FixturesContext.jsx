@@ -28,7 +28,7 @@ export const FixturesProvider = ({ children }) => {
 
             if (response.status === 200) {
                 const data = response.data;
-                console.log(data.billetera, "BILLETERA");
+                console.log(data.billetera, "Billetera obtenida");
                 setBalance(data.billetera);
 
             } else {
