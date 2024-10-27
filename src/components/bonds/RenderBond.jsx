@@ -1,4 +1,4 @@
-// RenderBond.jsx
+// PENDIENTE BOLETA NO FUNCIONA
 
 import React, { useState, useEffect } from 'react';
 import BondCard from './BondCard';
@@ -10,27 +10,53 @@ const RenderBond = ({ userId }) => {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL  
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-  const fetchBonds = async () => {
-    setLoading(true);
+  async function handleDownloadReceipt(request_id, usuarioId, fixture_id, league_name, round, quantity) {
     try {
-      const response = await axios.get(`${BACKEND_URL}/users/${userId}/requests`);
+      const response = await axios.post(`https://1mvu1q04jf.execute-api.us-east-2.amazonaws.com/dev/receipts/${request_id}`, {
+        request_id: request_id,
+        usuarioId: usuarioId,
+        fixture_id: fixture_id,
+        league_name: league_name,
+        round: round,
+        quantity: quantity
+      }, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+  
       const data = response.data;
-      if (data.requests) {
-        setBondsData(data.requests);
+      if (response.status === 200) {
+        console.log("Boleta generada exitosamente:", data.pdfUrl);
+        window.open(data.pdfUrl, "_blank"); 
       } else {
-        setBondsData([]);
+        console.error("Error al generar la boleta:", data.message);
       }
     } catch (error) {
-      console.error('Error fetching bonds:', error);
-    } finally {
-      setLoading(false);
+      console.error("Error en la solicitud de generación de boleta:", error);
     }
-  };
+  }
 
-  fetchBonds();
-}, [userId]);
+  useEffect(() => {
+    const fetchBonds = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(`${BACKEND_URL}/users/${userId}/requests`);
+        const data = response.data;
+        if (data.requests) {
+          setBondsData(data.requests);
+        } else {
+          setBondsData([]);
+        }
+      } catch (error) {
+        console.error('Error fetching bonds:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
+    fetchBonds();
+  }, [userId]);
 
   const handleLoadMore = () => {
     setVisibleCount((prevCount) => prevCount + 5);
@@ -42,7 +68,11 @@ useEffect(() => {
         <p>Loading bonds...</p>
       ) : bondsData.length > 0 ? (
         bondsData.slice(0, visibleCount).map((bond, index) => (
-          <BondCard key={index} {...bond} />
+          <BondCard
+            key={index}
+            {...bond}
+            onDownloadReceipt={handleDownloadReceipt} // Pasar la función de descarga a cada BondCard
+          />
         ))
       ) : (
         <p>No bonds available for this user.</p>
@@ -55,3 +85,4 @@ useEffect(() => {
 };
 
 export default RenderBond;
+
