@@ -1,22 +1,32 @@
 /* BondCard.css */
 
 .bond-card {
-    border: 1px solid #ccc;
-    padding: 16px;
-    margin: 16px 0;
-  }
-  
-  .bond-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .bond-details {
-    margin-top: 16px;
-  }
-  
-  .bond-details p {
-    margin: 4px 0;
-  }
-  
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bond-content {
+  display: flex;
+  justify-content: space-between; /* Alinea las dos columnas una al lado de la otra */
+}
+
+.bond-left {
+  flex: 1; /* Ocupa todo el espacio restante para los detalles */
+}
+
+.bond-right {
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-end; 
+  margin-top: 50px;
+}
+
+.bond-details {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
