@@ -8,10 +8,11 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
 const BetModal = () => {
     const { selectedCard, setSelectedCard, balance, setBalance } = useContext(FixturesContext);
-
     const [selectedOdd, setSelectedOdd] = useState(null);
     const [selectedAmount, setSelectedAmount] = useState(1);
     const [selectedTeam, setSelectedTeam] = useState(null);
+    const [showPaymentOptions, setShowPaymentOptions] = useState(false);
+    const [paymentMethod, setPaymentMethod] = useState(null);
     const userId = localStorage.getItem('userId');
     if (!selectedCard) return null;
 
@@ -20,13 +21,17 @@ const BetModal = () => {
         setSelectedAmount(1);
         setSelectedOdd(null);
         setSelectedTeam(null);
+        setShowPaymentOptions(false); // Cerrar el modal de opciones de pago si está abierto
+        setPaymentMethod(null);
     };
+
     const tryParseDate = (rawDate) => {
         // Intentamos varios formatos comunes
         const formats = [
             'MM/dd/yyyy, h:mm:ss a', // Formato usado en Mac
             'dd-MM-yyyy, h:mm:ss a', // Formato usado en Windows
-            'dd/MM/yyyy, h:mm:ss'    // Otro formato posible
+            'dd/MM/yyyy, h:mm:ss',    // Otro formato posible
+            'dd/MM/yyyy, HH:mm:ss'
         ];
     
         let parsedDate = null;
@@ -47,7 +52,8 @@ const BetModal = () => {
         return parsedDate;
     };
 
-    const handleBet = async () => {
+    const handleBet = async (selectedWallet) => {
+
         const date = tryParseDate(selectedCard.date);
         const formattedDate = format(date, 'yyyy-MM-dd');
         console.log('Formatted Date:', formattedDate);
@@ -62,22 +68,40 @@ const BetModal = () => {
             deposit_token: "", // Asumiendo que no hay token de depósito
             datetime: new Date().toISOString(),
             quantity: parseInt(selectedAmount, 10),
+            wallet: selectedWallet, //Lo esta mandando null
             user_id: userId, 
+
             status: 'pending',
         };
 
         console.log('Bet Request:', betRequest);
 
-        if (betRequest.quantity * 1000 > balance) {
-            console.log('No tienes suficiente saldo');
-            return;
+        if (selectedWallet) {
+            if (betRequest.quantity * 1000 > balance) {
+                alert('No tienes suficiente saldo');
+                return;
+            } else {
+                try {
+                    const response = await axios.post(`${BACKEND_URL}/requests`, betRequest);
+                    console.log('Response:', response.data);
+                    alert('Tu compra con wallet fue realizada con éxito');
+                    setBalance(balance - betRequest.quantity * 1000);
+                    handleClose();
+                } catch (error) {
+                    console.error('Error creating bet request:', error);
+                }
+            }
         } else {
+            // Hacer la solicitud a Webpay si es la opción seleccionada
             try {
-                const response = await axios.post(`${BACKEND_URL}/requests`, betRequest);
-                console.log('Bet Request Response:', response.data);
-                handleClose();
+                const webpayResponse = await axios.post(`${BACKEND_URL}/requests`, betRequest);
+                console.log('Webpay Response:', webpayResponse.data);
+
+                // Redirigir al usuario a Webpay
+                window.location.href = `${webpayResponse.data.url}?token_ws=${webpayResponse.data.token}`;
             } catch (error) {
-                console.error('Error creating bet request:', error);
+                console.error('Error creating bet request or initiating Webpay:', error);
+                alert('Hubo un problema al crear la request o al iniciar el pago con Webpay.');
             }
         }
     };
@@ -85,6 +109,22 @@ const BetModal = () => {
     const handleOddSelection = (odd, team_name) => {
         setSelectedOdd(odd);
         setSelectedTeam(team_name);
+    };
+
+    const handlePaymentSelection = (method) => {
+        console.log('method', method);
+        setPaymentMethod(method);
+        setShowPaymentOptions(false); // Cerrar el modal de opciones de pago
+
+        if (method == 'wallet') {
+            handleBet(true); // Paga con wallet
+        } else {
+            handleBet(false); // Paga con Webpay
+        }
+    };
+    
+    const showPaymentModal = () => {
+        setShowPaymentOptions(true); // Mostrar opciones de pago
     };
 
     return (
@@ -136,9 +176,19 @@ const BetModal = () => {
                     </div>
                 </div>
 
-                <button onClick={handleBet}>Realizar Apuesta</button>
+                <button onClick={showPaymentModal}>Realizar Apuesta</button>
                 <button onClick={handleClose}>Cerrar</button>
             </div>
+
+            {showPaymentOptions && (
+                <div className="payment-modal">
+                    <div className="payment-modal-content">
+                        <h4>¿Cómo quieres pagar?</h4>
+                        <button onClick={() => handlePaymentSelection('wallet')}>Wallet</button>
+                        <button onClick={() => handlePaymentSelection('webpay')}>Webpay</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
