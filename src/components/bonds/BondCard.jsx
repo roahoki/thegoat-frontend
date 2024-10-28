@@ -54,7 +54,7 @@ const BondCard = ({
           {shouldShowDownloadButton() && (
             <button
               className="download-button"
-              onClick={() => onDownloadReceipt(request_id, usuarioId, fixture_id, league_name, round, quantity)}
+              onClick={() => onDownloadReceipt(request_id, user_id, fixture_id, league_name, round, quantity)}
             >
               Descargar Boleta
             </button>
