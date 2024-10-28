@@ -34,8 +34,8 @@ const Profile = () => {
                 if (response.status === 200) {
                     const data = response.data;
                      // Convertir la respuesta a JSON
-                    setBalance(data.billetera); // Asegúrate de que 'balance' es el campo correcto
-                    console.log(data.billetera, "FUNCIONANDO");
+                    setBalance(data.wallet); // Asegúrate de que 'balance' es el campo correcto
+                    console.log(data.wallet, "FUNCIONANDO");
                 } else {
                     console.error('Error getting the balance:', response.statusText);
                 }
@@ -72,8 +72,8 @@ const Profile = () => {
                 if (response.status === 200) {
                     console.log('Balance updated successfully:', response.data);
                     const data = response.data;
-                    await setBalance(data.user.billetera); // Update the balance with the value returned by the API
-                    console.log(data.user.billetera);
+                    await setBalance(data.user.wallet); // Update the balance with the value returned by the API
+                    console.log(data.user.wallet);
                     await setAmount('');
                     setShowInput(false);
                 } else {

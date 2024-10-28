@@ -13,7 +13,7 @@ const BondCard = ({
   datetime,
   quantity,
   seller,
-  usuarioId,
+  user_id,
   status,
   wallet,
   ip_address,
@@ -41,7 +41,7 @@ const BondCard = ({
             <p><strong>Deposit Token:</strong> {deposit_token}</p>
             <p><strong>Quantity:</strong> {quantity}</p>
             <p><strong>Seller:</strong> {seller}</p>
-            <p><strong>User ID:</strong> {usuarioId}</p>
+            <p><strong>User ID:</strong> {user_id}</p>
             <p><strong>IP Address:</strong> {ip_address}</p>
             <p><strong>Location:</strong> {location}</p>
             <p><strong>Payment method:</strong> {wallet ? 'Wallet' : 'Webpay'}</p>
@@ -60,6 +60,25 @@ const BondCard = ({
             </button>
           )}
         </div>
+
+//       <div className="bond-header">
+//         <h4>Request ID: {request_id}</h4>
+//         <p>Status: {status}</p>
+//       </div>
+//       <div className="bond-details">
+//         <p><strong>Group ID:</strong> {group_id}</p>
+//         <p><strong>Fixture ID:</strong> {fixture_id}</p>
+//         <p><strong>League:</strong> {league_name}</p>
+//         <p><strong>Round:</strong> {round}</p>
+//         <p><strong>Date:</strong> {new Date(date).toLocaleString()}</p>
+//         <p><strong>Result:</strong> {result}</p>
+//         <p><strong>Deposit Token:</strong> {deposit_token}</p>
+//         <p><strong>Quantity:</strong> {quantity}</p>
+//         <p><strong>Seller:</strong> {seller}</p>
+//         <p><strong>User ID:</strong> {user_id}</p>
+//         <p><strong>IP Address:</strong> {ip_address}</p>
+//         <p><strong>Location:</strong> {location}</p>
+
       </div>
     </div>
   );

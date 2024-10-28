@@ -69,7 +69,8 @@ const BetModal = () => {
             datetime: new Date().toISOString(),
             quantity: parseInt(selectedAmount, 10),
             wallet: selectedWallet, //Lo esta mandando null
-            usuarioId: userId, 
+            user_id: userId, 
+
             status: 'pending',
         };
 
