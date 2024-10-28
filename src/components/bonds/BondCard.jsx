@@ -69,7 +69,3 @@ const BondCard = ({
 };
 
 export default BondCard;
-
-
-
-
