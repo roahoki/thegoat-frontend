@@ -78,14 +78,10 @@ const BondCard = ({
 //         <p><strong>User ID:</strong> {user_id}</p>
 //         <p><strong>IP Address:</strong> {ip_address}</p>
 //         <p><strong>Location:</strong> {location}</p>
-
+          </div>
       </div>
     </div>
   );
 };
 
 export default BondCard;
-
-
-
-
