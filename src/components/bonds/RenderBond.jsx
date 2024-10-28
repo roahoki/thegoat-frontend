@@ -10,11 +10,11 @@ const RenderBond = ({ userId }) => {
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL  
   const [loading, setLoading] = useState(true);
 
-  async function handleDownloadReceipt(request_id, usuarioId, fixture_id, league_name, round, quantity) {
+  async function handleDownloadReceipt(request_id, user_id, fixture_id, league_name, round, quantity) {
     try {
       const response = await axios.post(`https://1mvu1q04jf.execute-api.us-east-2.amazonaws.com/dev/receipts/${request_id}`, {
         request_id: request_id,
-        usuarioId: usuarioId,
+        usuarioId: user_id,
         fixture_id: fixture_id,
         league_name: league_name,
         round: round,
