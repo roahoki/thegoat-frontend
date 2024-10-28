@@ -6,6 +6,8 @@ import Bonds from '../pages/bonds/Bonds'
 import Fixtures from '../pages/Fixtures'
 import Profile from '../pages/profile/Profile'
 import PurchaseCompleted from '../pages/purchase-completed/PurchaseCompleted'
+import Recommendations from '../pages/recommendations/Recommendations'
+
 
 
 const Routing = () => {
@@ -19,6 +21,7 @@ const Routing = () => {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/fixtures" element={<Fixtures />} />
                 <Route path="/purchase-completed" element={<PurchaseCompleted />} />
+                <Route path="/recommendations" element={<Recommendations />} />
                 <Route path="*" element={<h1>Not Found</h1>} />
             </Routes>
         </BrowserRouter>

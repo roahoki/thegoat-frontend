@@ -58,6 +58,9 @@ const BetModal = () => {
         const formattedDate = format(date, 'yyyy-MM-dd');
         console.log('Formatted Date:', formattedDate);
 
+        if (!selectedWallet){
+            selectedWallet = false;
+        }
         const betRequest = {
             group_id: '15', // Asumiendo que el group_id es 15
             fixture_id: selectedCard.fixture_id,
@@ -82,6 +85,7 @@ const BetModal = () => {
                 return;
             } else {
                 try {
+                    console.log(`\n Bet request ${betRequest}\n`);
                     const response = await axios.post(`${BACKEND_URL}/requests`, betRequest);
                     console.log('Response:', response.data);
                     alert('Tu compra con wallet fue realizada con éxito');

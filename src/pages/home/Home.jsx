@@ -10,7 +10,7 @@ function Home() {
   const loginUser = async () => {
     try {
       const auth0Token = await getAccessTokenSilently()
-      console.log('Auth0 Token:', auth0Token);
+      // console.log('Auth0 Token:', auth0Token);
 
       const response = await fetch(`${backendUrl}/users/login`, {
         method: 'POST',
