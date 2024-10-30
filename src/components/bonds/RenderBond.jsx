@@ -43,8 +43,9 @@ const RenderBond = ({ userId }) => {
       try {
         const response = await axios.get(`${BACKEND_URL}/users/${userId}/requests`);
         const data = response.data;
-        if (data.requests) {
-          setBondsData(data.requests);
+        console.log("Data received:", data);
+        if (data.requestsWithTeamData) {
+          setBondsData(data.requestsWithTeamData);
         } else {
           setBondsData([]);
         }
