@@ -22,23 +22,40 @@ const Recommendations = () => {
   };
 
   const getSum = async () => {
+    const user_id = localStorage.getItem('userId');
     try {
-      const response = await fetch(`${BACKEND_URL}`, {
-        method: 'POST',
+      const response = await fetch(`${BACKEND_URL}/workers/sum/${user_id}`, {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          number: 4,
-        }),
       });
       const result = await response.json();
       setData(result);
       console.log('Suma: ', result.result);
     } catch (error) {
-      console.error('Error al hacer el POST:', error);
+      console.error('Error al hacer el GET:', error);
     }
   }
+
+  const getRecommendation = async () => {
+    const user_id = localStorage.getItem('userId');
+    try {
+      const response = await fetch(`${BACKEND_URL}/workers/recommendation/${user_id}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const result = await response.json();
+      setData(result);
+      console.log('Resultado recommendation: ', result.result);
+    } catch (error) {
+      console.error('Error al hacer el GET:', error);
+    }
+  }
+
+
 
   return (
     <FixturesProvider>
@@ -48,9 +65,9 @@ const Recommendations = () => {
         >HEARTBEAT</button>
 
         <button
-          onClick={getSum}
+          onClick={getRecommendation}
         >
-          SUMAR 4
+          get Recommendation
         </button>
 
         

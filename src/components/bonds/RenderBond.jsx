@@ -14,7 +14,7 @@ const RenderBond = ({ userId }) => {
     try {
       const response = await axios.post(`https://1mvu1q04jf.execute-api.us-east-2.amazonaws.com/dev/receipts/${request_id}`, {
         request_id: request_id,
-        usuarioId: user_id,
+        user_id: user_id,
         fixture_id: fixture_id,
         league_name: league_name,
         round: round,

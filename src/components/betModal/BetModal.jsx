@@ -101,7 +101,7 @@ const BetModal = () => {
                 const webpayResponse = await axios.post(`${BACKEND_URL}/requests`, betRequest);
                 console.log('Webpay Response:', webpayResponse.data);
 
-                // Redirigir al usuario a Webpay
+                // Redirigir al user_id a Webpay
                 window.location.href = `${webpayResponse.data.url}?token_ws=${webpayResponse.data.token}`;
             } catch (error) {
                 console.error('Error creating bet request or initiating Webpay:', error);
