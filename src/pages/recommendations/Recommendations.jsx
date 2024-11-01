@@ -12,6 +12,7 @@ const Recommendations = () => {
   const [loading, setLoading] = useState(true);
   const [heartbeatMessage, setHeartbeatMessage] = useState('');
   const [heartbeatStatus, setHeartbeatStatus] = useState('');
+  const [currentDate, setCurrentDate] = useState('');
 
   const getHeartBeat = async () => {
     try {
@@ -79,19 +80,29 @@ const Recommendations = () => {
 
   useEffect(() => {
     getRecommendation();
+    const formattedDate = new Intl.DateTimeFormat('es-ES', {
+      dateStyle: 'full',
+      timeStyle: 'long',
+    }).format(new Date());
+    setCurrentDate(formattedDate);
   }, []);
 
   return (
     <FixturesProvider>
       <div>
-         {/* Heartbeat Button and Message */}
-         <button onClick={getHeartBeat}>Check Heartbeat</button>
+        {/* Display the current date */}
+        <p>Última actualización:</p> 
+          <p>{currentDate}</p>
+  
+        {/* Heartbeat Button and Message */}
+        <button onClick={getHeartBeat}>Check Heartbeat</button>
         {heartbeatMessage && (
           <p style={{ color: heartbeatStatus === 'good' ? 'green' : 'red' }}>
             {heartbeatMessage}
           </p>
         )}
-
+  
+        {/* Existing content */}
         {loading ? (
           <p>Recomendación en proceso</p>
         ) : (
