@@ -18,10 +18,19 @@ jobs:
       with:
         node-version: '16'
 
+    - name: Load .env variables
+      run: |
+        echo "Loading .env variables"
+        if [ -f .env ]; then
+          export $(cat .env | xargs)
+        fi
+
     - name: Install dependencies
       run: npm install
 
     - name: Build the application
+      env:
+        $(cat .env | xargs) 
       run: npm run build
 
     - name: Deploy to S3
