@@ -9,17 +9,25 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const Recommendations = () => {
   const [data, setData] = useState(null);
   const [fixtures, setFixtures] = useState(null);
-
-
+  const [loading, setLoading] = useState(true);
+  const [heartbeatMessage, setHeartbeatMessage] = useState('');
+  const [heartbeatStatus, setHeartbeatStatus] = useState('');
 
   const getHeartBeat = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/workers/heartbeat`);
+      const response = await fetch(`${BACKEND_URL}/workers/heartbeat`);
       const result = await response.json();
-      setData(result);
+      setHeartbeatMessage(result.message);
+      if (result.message === 'doing good') {
+        setHeartbeatStatus('good');
+      } else {
+        setHeartbeatStatus('bad');
+      }
       console.log('Heartbeat: ', result.message);
     } catch (error) {
-      console.error('Error al hacer el GET:', error);
+      console.error('Error fetching heartbeat:', error);
+      setHeartbeatMessage('Error connecting to server');
+      setHeartbeatStatus('bad');
     }
   };
 
@@ -44,55 +52,55 @@ const Recommendations = () => {
             },
           });
           const fixtureData = await fixtureResponse.json();
-
-          // Agregar el fixture al array
+  
+          // Add the fixture to the array
           fixtures.push({
             ...fixtureData,
-            ponderacion, // Agregar ponderación al objeto de fixture
+            ponderacion,
           });
         } catch (error) {
-          console.error(`Error al obtener datos del fixture ${fixture_id}:`, error);
+          console.error(`Error fetching fixture data for ${fixture_id}:`, error);
         }
       }
-
-      // Imprimir el array completo en la consola
-      console.log('Array de fixtures:', fixtures);
-
-      // Guardar el array en el estado si lo necesitas
-      setData(fixtures);
+  
+      // Update the fixtures state
+      setFixtures(fixtures);
+      console.log('Array of fixtures:', fixtures);
+  
+      // Set loading to false after data is fetched
+      setLoading(false);
     } catch (error) {
-      console.error('Error al hacer el GET:', error);
+      console.error('Error fetching recommendations:', error);
+      // Set loading to false even if there is an error
+      setLoading(false);
     }
   };
-
+  
 
   useEffect(() => {
-    const fetchRecommendations = async () => {
-      await getRecommendation();
-    };
-
-    fetchRecommendations();
+    getRecommendation();
   }, []);
 
   return (
     <FixturesProvider>
       <div>
-        <button onClick={getRecommendation}>
-          get Recommendation
-        </button>
-      </div>
+         {/* Heartbeat Button and Message */}
+         <button onClick={getHeartBeat}>Check Heartbeat</button>
+        {heartbeatMessage && (
+          <p style={{ color: heartbeatStatus === 'good' ? 'green' : 'red' }}>
+            {heartbeatMessage}
+          </p>
+        )}
 
-      <div>
-        {fixtures ? (
-          <RenderRecommendedFixtures recommendedFixtures={fixtures} />
-        ) : (
+        {loading ? (
           <p>Recomendación en proceso</p>
+        ) : (
+          <RenderRecommendedFixtures recommendedFixtures={fixtures} />
         )}
         <BetModal />
-      </div> 
+      </div>
     </FixturesProvider>
   );
-
 
 };
 
