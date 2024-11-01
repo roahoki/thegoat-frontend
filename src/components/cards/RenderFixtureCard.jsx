@@ -7,7 +7,6 @@ const RenderCard = () => {
     const { selectedLeague, setSelectedLeague, selectedDate, setSelectedDate, selectedCard, setSelectedCard, fixturesData} = useContext(FixturesContext)
     const [visibleCount, setVisibleCount] = useState(5) // Estado para controlar cuántos resultados se muestran
     // console.log(fixturesData.fixtures); // aqui tenemos el array de fixtures
-    // console.log(fixturesData.fixtures[0].date);
     
     // Si selectedLeague es null, tomar la primera liga en fixturesData
     const leagueToFilter = selectedLeague || fixturesData.fixtures[0].league.name
@@ -37,7 +36,7 @@ const RenderCard = () => {
 
         return isLeagueMatch && isDateMatch
     })
-    // console.log(filteredFixtures)
+    console.log(filteredFixtures[0])
     const cardsData = filteredFixtures.map(fixture => {
         const homeOdd = fixture.odds.find(odd => odd.value === "Home")?.odd || 'N/A';
         const drawOdd = fixture.odds.find(odd => odd.value === "Draw")?.odd || 'N/A';
