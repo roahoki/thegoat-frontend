@@ -18,11 +18,14 @@ const BondCard = ({
   wallet,
   ip_address,
   location,
+  user,
+  home_team_name,
+  away_team_name,
   onDownloadReceipt // Callback para manejar la descarga de la boleta
 }) => {
   // Función para verificar si debe mostrar el botón de descarga
   const shouldShowDownloadButton = () => {
-    return wallet === false && (status === 'accepted' || status === 'won' || status === 'lost');
+    return status === 'accepted' || status === 'won' || status === 'lost';
   };
 
   return (
@@ -54,7 +57,7 @@ const BondCard = ({
           {shouldShowDownloadButton() && (
             <button
               className="download-button"
-              onClick={() => onDownloadReceipt(request_id, user_id, fixture_id, league_name, round, quantity)}
+              onClick={() => onDownloadReceipt(request_id, user_id, fixture_id, league_name, round, quantity, user.name, user.email, home_team_name, away_team_name)}
             >
               Descargar Boleta
             </button>
