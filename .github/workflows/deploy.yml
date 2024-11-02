@@ -18,14 +18,15 @@ jobs:
       with:
         node-version: '16'
 
-    - name: Install dotenv-cli
-      run: npm install -g dotenv-cli
-
     - name: Install dependencies
       run: npm install
 
     - name: Build the application
-      run: dotenv -e .env -- npm run build
+      env:
+        VITE_AUTH0_DOMAIN: ${{ secrets.VITE_AUTH0_DOMAIN }}
+        VITE_AUTH0_CLIENT_ID: ${{ secrets.VITE_AUTH0_CLIENT_ID }}
+        VITE_BACKEND_URL: ${{ secrets.VITE_BACKEND_URL }}
+      run: npm run build
 
     - name: Deploy to S3
       env:
