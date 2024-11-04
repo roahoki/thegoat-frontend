@@ -35,6 +35,7 @@ const Profile = () => {
                     const data = response.data;
                      // Convertir la respuesta a JSON
                     setBalance(data.wallet); // Asegúrate de que 'balance' es el campo correcto
+                    console.log(data);
                     console.log(data.wallet, "FUNCIONANDO");
                 } else {
                     console.error('Error getting the balance:', response.statusText);
