@@ -10,7 +10,7 @@ const RenderBond = ({ userId }) => {
 
   async function handleDownloadReceipt(request_id, user_id, fixture_id, league_name, round, quantity, name, email, home_team_name, away_team_name) {
     try {
-      const response = await axios.post(`https://grfhxxdjt7.execute-api.us-east-2.amazonaws.com/dev/receipts/${request_id}`, {
+      const response = await axios.post(`https://arquisis.thegoatdomain.me/receipts/${request_id}`, {
         request_id: request_id,
         user_id: user_id,
         fixture_id: fixture_id,
