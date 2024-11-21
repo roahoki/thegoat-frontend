@@ -6,8 +6,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
 }
 
 .header a {
@@ -30,5 +28,5 @@
     margin-right: var(--margin);
     padding: var(--padding-small);
     display: flex;
-    gap: var(--margin-small);
+    gap: var(--margin-big);
 }

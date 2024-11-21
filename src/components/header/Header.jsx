@@ -15,10 +15,10 @@ const Header = () => {
         <a href="/">HOME</a>
         <a href="/fixtures">BET</a>
         <a href="/bonds">MIS BONOS</a>
+        <a href="/admin/bonds">BONOS ADMIN</a>
+        <a href="/admin/bonds/avail">BONOS ADMIN DISPONIBLES</a>
         <a href="/recommendations">HOT BETS</a>
         <a href="/profile">PERFIL</a>
-        
-        
       </nav>
 
       {

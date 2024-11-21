@@ -7,7 +7,8 @@ import Fixtures from '../pages/Fixtures'
 import Profile from '../pages/profile/Profile'
 import PurchaseCompleted from '../pages/purchase-completed/PurchaseCompleted'
 import Recommendations from '../pages/recommendations/Recommendations'
-
+import AdminBonds from '../pages/bonds/AdminBonds';
+import AdminAvailableBonds from '../pages/bonds/AdminAvailableBonds';
 
 
 const Routing = () => {
@@ -22,6 +23,8 @@ const Routing = () => {
                 <Route path="/fixtures" element={<Fixtures />} />
                 <Route path="/purchase-completed" element={<PurchaseCompleted />} />
                 <Route path="/recommendations" element={<Recommendations />} />
+                <Route path="/admin/bonds" element={<AdminBonds />} />
+                <Route path="/admin/bonds/avail" element={<AdminAvailableBonds />} />
                 <Route path="*" element={<h1>Not Found</h1>} />
             </Routes>
         </BrowserRouter>
