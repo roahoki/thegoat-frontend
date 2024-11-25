@@ -1,5 +1,3 @@
-// VER BONOS QUE ESTAN EN SUBASTA
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './AdminAuction.css';
@@ -11,17 +9,32 @@ const AdminAuctions = () => {
     const [selectedAuction, setSelectedAuction] = useState(null);
     const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
+    // Obtener el userId (desde localStorage, contexto o JWT)
+    const userId = localStorage.getItem('userId');
+
     useEffect(() => {
         const fetchOffers = async () => {
+            console.log("Fetching offers with userId:", userId); // Log para verificar
+        
+            if (!userId) {
+                console.error("userId not found in localStorage.");
+                alert("You need to log in as an admin to view offers.");
+                return;
+            }
+        
+            setLoading(true);
             try {
-                const response = await axios.get(`${BACKEND_URL}/auctions/offers`);
+                const response = await axios.get(`${BACKEND_URL}/auctions/offers`, {
+                    params: { userId }, // Enviar el userId como query param
+                });
                 setOffers(response.data.offers || []);
             } catch (error) {
                 console.error("Error fetching auction offers:", error);
+                alert(error.response?.data?.error || "Failed to fetch auction offers.");
             } finally {
                 setLoading(false);
             }
-        };
+        };        
 
         fetchOffers();
     }, []);
@@ -41,13 +54,14 @@ const AdminAuctions = () => {
                 <p>Loading offers...</p>
             ) : offers.length > 0 ? (
                 offers.map((offer) => (
-                    <div className="offer-card">
+                    <div className="offer-card" key={offer.id}>
                         <h4>Fixture ID: {offer.fixture_id}</h4>
                         <p><strong>League:</strong> {offer.league_name}</p>
                         <p><strong>Round:</strong> {offer.round}</p>
                         <p><strong>Result:</strong> {offer.result}</p>
                         <p><strong>Quantity:</strong> {offer.quantity}</p>
                         <p><strong>Group ID:</strong> {offer.group_id}</p>
+                        <p><strong>Auction ID:</strong> {offer.auction_id}</p>
                         <button onClick={() => handleOpenModal(offer)}>Lo quiero!</button>
                     </div>
                 ))
@@ -65,3 +79,4 @@ const AdminAuctions = () => {
 };
 
 export default AdminAuctions;
+

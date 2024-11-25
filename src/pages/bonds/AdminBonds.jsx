@@ -6,43 +6,72 @@ const AdminBonds = () => {
     const [loading, setLoading] = useState(true);
     const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
+    // Aquí se obtiene el userId (puede ser desde un contexto, JWT, o localStorage)
+    const userId = localStorage.getItem('userId'); // Asegúrate de guardar el userId al iniciar sesión
+
     useEffect(() => {
         const fetchAdminBonds = async () => {
+            const userId = localStorage.getItem('userId'); // Obtener el userId desde localStorage
+    
+            if (!userId) {
+                alert('You need to log in as an admin to view bonds.');
+                return;
+            }
+    
             setLoading(true);
             try {
-                const response = await axios.get(`${BACKEND_URL}/admin/bonds`);
+                const response = await axios.get(`${BACKEND_URL}/admin/bonds`, {
+                    params: { userId }, // Enviar el userId como query parameter
+                });
                 setAdminBonds(response.data.adminBonds || []);
             } catch (error) {
                 console.error('Error fetching admin bonds:', error);
+                alert(error.response?.data?.error || 'Failed to fetch admin bonds.');
             } finally {
                 setLoading(false);
             }
         };
-
+    
         fetchAdminBonds();
     }, []);
+    
 
     const handleMakeAvailable = async (bondId) => {
+        const userId = localStorage.getItem('userId'); // Obtener el userId desde localStorage
+    
+        if (!userId) {
+            alert('You need to log in as an admin to perform this action.');
+            return;
+        }
+    
         try {
-            const response = await axios.patch(`${BACKEND_URL}/admin/bonds/${bondId}/avail`);
+            const response = await axios.patch(
+                `${BACKEND_URL}/admin/bonds/${bondId}/avail`,
+                null, // No body en el PATCH
+                { params: { userId } } // Enviar el userId como query parameter
+            );
+    
             if (response.status === 200) {
                 alert('Bond made available successfully!');
             }
         } catch (error) {
             console.error('Error making bond available:', error);
-            alert('Failed to make bond available.');
+            alert(error.response?.data?.error || 'Failed to make bond available.');
         }
     };
+    
 
     const handlePutOnAuction = async (bondId) => {
         try {
-            const response = await axios.post(`${BACKEND_URL}/auctions/${bondId}`);
+            const response = await axios.post(`${BACKEND_URL}/auctions/${bondId}`, {
+                userId, // Envía el userId al backend
+            });
             if (response.status === 200) {
                 alert('Bond put on auction successfully!');
             }
         } catch (error) {
             console.error('Error putting bond on auction:', error);
-            alert('Failed to put bond on auction.');
+            alert(error.response?.data?.error || 'Failed to put bond on auction.');
         }
     };
 
@@ -88,3 +117,4 @@ const AdminBonds = () => {
 };
 
 export default AdminBonds;
+
