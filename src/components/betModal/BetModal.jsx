@@ -17,7 +17,7 @@ const BetModal = () => {
     const [paymentMethod, setPaymentMethod] = useState(null);
     const [isCompanyPurchase, setIsCompanyPurchase] = useState(false);
     const userId = localStorage.getItem('userId');
-    const isAdmin = localStorage.getItem('admin') === 'true';
+    const isAdmin = localStorage.getItem('admin');
 
     if (!selectedCard) return null;
 
@@ -195,7 +195,7 @@ const BetModal = () => {
                 </div>
 
                 <button onClick={showPaymentModal}>Realizar Apuesta</button>
-                {isAdmin && (
+                {isAdmin == "true" && (
                     <button onClick={handleCompanyPurchase}>Comprar para la empresa</button>
                 )}
                 <button onClick={handleClose}>Cerrar</button>

@@ -12,7 +12,7 @@ const Header = () => {
   const [isAdminMenuOpen, setIsAdminMenuOpen] = useState(false);
 
   // Recuperar el estado de administrador
-  const isAdmin = localStorage.getItem('admin') === 'true';
+  const isAdmin = localStorage.getItem('admin');
 
   const toggleAdminMenu = () => {
     setIsAdminMenuOpen((prev) => !prev);
@@ -29,7 +29,7 @@ const Header = () => {
         <a href="/admin/bonds/avail">ADMIN DEALS</a>
 
         {/* Renderizar el dropdown solo si el usuario es administrador */}
-        {isAdmin && (
+        {isAdmin == "true" && (
           <div 
             className="dropdown" 
             onMouseEnter={toggleAdminMenu} 
