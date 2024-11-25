@@ -12,18 +12,27 @@ const AdminProposals = () => {
 
     useEffect(() => {
         const fetchUserOffers = async () => {
+            console.log("Fetching offers for userId:", userId); // Log para depurar
+    
+            if (!userId) {
+                console.error("userId not found in localStorage.");
+                alert("You need to log in to view your offers.");
+                return;
+            }
+    
             try {
                 const response = await axios.get(`${BACKEND_URL}/auctions/my-offers`, {
-                    params: { userId },
+                    params: { userId }, // Enviamos el userId como query param
                 });
                 setOffers(response.data.offers || []);
             } catch (error) {
                 console.error("Error fetching user offers:", error);
+                alert("Failed to fetch user offers.");
             } finally {
                 setLoading(false);
             }
         };
-
+    
         fetchUserOffers();
     }, []);
 

@@ -6,19 +6,36 @@ const OfferModal = ({ offer, onClose }) => {
     const [adminBonds, setAdminBonds] = useState([]);
     const [selectedBond, setSelectedBond] = useState(null);
     const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+    console.log('userId from localStorage:', localStorage.getItem('userId'));
 
     useEffect(() => {
         const fetchAdminBonds = async () => {
+            const userId = localStorage.getItem('userId'); // Obtener el userId del localStorage
+    
+            if (!userId) {
+                console.error('No userId found in localStorage.');
+                alert('You need to log in as an admin to view bonds.');
+                return;
+            }
+    
+            console.log('Sending userId:', userId); // Verificar qué se está enviando
+    
             try {
-                const response = await axios.get(`${BACKEND_URL}/admin/bonds`);
+                const response = await axios.get(`${BACKEND_URL}/admin/bonds`, {
+                    params: { userId }, // Enviar el userId como query parameter
+                });
+                console.log('Fetched bonds:', response.data); // Verificar la respuesta
                 setAdminBonds(response.data.adminBonds || []);
             } catch (error) {
                 console.error('Error fetching admin bonds:', error);
+                alert(error.response?.data?.error || 'Failed to fetch admin bonds.');
             }
         };
-
+    
         fetchAdminBonds();
     }, []);
+    
+    
 
     const handleOffer = async () => {
         if (!selectedBond) {
