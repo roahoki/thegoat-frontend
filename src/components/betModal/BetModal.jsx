@@ -1,3 +1,5 @@
+// PENDIENTE QUE SOLO ADMINS PUEDEN COMPRAR PARA LA EMPRESA
+
 import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { FixturesContext } from '../../contexts/FixturesContext';
@@ -13,7 +15,9 @@ const BetModal = () => {
     const [selectedTeam, setSelectedTeam] = useState(null);
     const [showPaymentOptions, setShowPaymentOptions] = useState(false);
     const [paymentMethod, setPaymentMethod] = useState(null);
+    const [isCompanyPurchase, setIsCompanyPurchase] = useState(false);
     const userId = localStorage.getItem('userId');
+
     if (!selectedCard) return null;
 
     const handleClose = () => {
@@ -23,6 +27,7 @@ const BetModal = () => {
         setSelectedTeam(null);
         setShowPaymentOptions(false); // Cerrar el modal de opciones de pago si está abierto
         setPaymentMethod(null);
+        setIsCompanyPurchase(false);
     };
 
     const tryParseDate = (rawDate) => {
@@ -56,11 +61,11 @@ const BetModal = () => {
 
         const date = tryParseDate(selectedCard.date);
         const formattedDate = format(date, 'yyyy-MM-dd');
-        console.log('Formatted Date:', formattedDate);
 
         if (!selectedWallet){
             selectedWallet = false;
         }
+
         const betRequest = {
             group_id: '15', // Asumiendo que el group_id es 15
             fixture_id: selectedCard.fixture_id,
@@ -71,22 +76,24 @@ const BetModal = () => {
             deposit_token: "", // Asumiendo que no hay token de depósito
             datetime: new Date().toISOString(),
             quantity: parseInt(selectedAmount, 10),
-            wallet: selectedWallet, //Lo esta mandando null
+            wallet: selectedWallet, // Lo esta mandando null
             user_id: userId, 
-
+            seller: isCompanyPurchase ? 15 : 0,
             status: 'pending',
         };
 
-        console.log('Bet Request:', betRequest);
 
         if (selectedWallet) {
             if (betRequest.quantity * 1000 > balance) {
                 alert('No tienes suficiente saldo');
                 return;
+
             } else {
                 try {
-                    console.log(`\n Bet request ${betRequest}\n`);
-                    const response = await axios.post(`${BACKEND_URL}/requests`, betRequest);
+                    console.log(`\n Bet request wallet ${betRequest.wallet}\n`); // ESTA BIEN EN TRUE
+
+                    const response = await axios.post(`${BACKEND_URL}/requests`, betRequest); // MANDA WALLET VACIO ??
+
                     console.log('Response:', response.data);
                     alert('Tu compra con wallet fue realizada con éxito');
                     setBalance(balance - betRequest.quantity * 1000);
@@ -95,6 +102,7 @@ const BetModal = () => {
                     console.error('Error creating bet request:', error);
                 }
             }
+
         } else {
             // Hacer la solicitud a Webpay si es la opción seleccionada
             try {
@@ -116,7 +124,7 @@ const BetModal = () => {
     };
 
     const handlePaymentSelection = (method) => {
-        console.log('method', method);
+
         setPaymentMethod(method);
         setShowPaymentOptions(false); // Cerrar el modal de opciones de pago
 
@@ -127,6 +135,11 @@ const BetModal = () => {
         }
     };
     
+    const handleCompanyPurchase = () => {
+        setIsCompanyPurchase(true); 
+        setShowPaymentOptions(true);
+    };
+
     const showPaymentModal = () => {
         setShowPaymentOptions(true); // Mostrar opciones de pago
     };
@@ -181,6 +194,7 @@ const BetModal = () => {
                 </div>
 
                 <button onClick={showPaymentModal}>Realizar Apuesta</button>
+                <button onClick={handleCompanyPurchase}>Comprar para la empresa</button>
                 <button onClick={handleClose}>Cerrar</button>
             </div>
 

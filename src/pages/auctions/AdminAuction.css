@@ -1,0 +1,14 @@
+.offer-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.proposal-actions {
+    display: flex;
+    gap: 10px; /* Ajusta este valor según el espacio que necesites */
+}
+
+
