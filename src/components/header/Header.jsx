@@ -11,6 +11,9 @@ const Header = () => {
   const { user, isAuthenticated } = useAuth0();
   const [isAdminMenuOpen, setIsAdminMenuOpen] = useState(false);
 
+  // Recuperar el estado de administrador
+  const isAdmin = localStorage.getItem('admin') === 'true';
+
   const toggleAdminMenu = () => {
     setIsAdminMenuOpen((prev) => !prev);
   };
@@ -24,21 +27,26 @@ const Header = () => {
         <a href="/fixtures">BET</a>
         <a href="/bonds">MIS BONOS</a>
         <a href="/admin/bonds/avail">ADMIN DEALS</a>
-        <div 
-          className="dropdown" 
-          onMouseEnter={toggleAdminMenu} 
-          onMouseLeave={toggleAdminMenu}
-        >
-          <a href="#" className="dropdown-title">ADMIN</a>
-          {isAdminMenuOpen && (
-            <div className="dropdown-menu">
-              <a href="/admin/bonds">BONOS RESERVADOS</a>
-              <a href="/admin/auctions">SUBASTAS ACTIVAS</a>
-              <a href="/admin/auctions/offers">OFERTAS RECIBIDAS</a>
-              <a href="/admin/auctions/proposals">MIS OFERTAS</a>
-            </div>
-          )}
-        </div>
+
+        {/* Renderizar el dropdown solo si el usuario es administrador */}
+        {isAdmin && (
+          <div 
+            className="dropdown" 
+            onMouseEnter={toggleAdminMenu} 
+            onMouseLeave={toggleAdminMenu}
+          >
+            <a href="#" className="dropdown-title">ADMIN</a>
+            {isAdminMenuOpen && (
+              <div className="dropdown-menu">
+                <a href="/admin/bonds">BONOS RESERVADOS</a>
+                <a href="/admin/auctions">SUBASTAS ACTIVAS</a>
+                <a href="/admin/auctions/offers">OFERTAS RECIBIDAS</a>
+                <a href="/admin/auctions/proposals">MIS OFERTAS</a>
+              </div>
+            )}
+          </div>
+        )}
+
         <a href="/recommendations">HOT BETS</a>
         <a href="/profile">PERFIL</a>
       </nav>
