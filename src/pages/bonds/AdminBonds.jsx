@@ -27,15 +27,22 @@ const AdminBonds = () => {
             const response = await axios.patch(`${BACKEND_URL}/admin/bonds/${bondId}/avail`);
             if (response.status === 200) {
                 alert('Bond made available successfully!');
-                setAdminBonds((prevBonds) =>
-                    prevBonds.map((bond) =>
-                        bond.id === bondId ? { ...bond, status: 'available' } : bond
-                    )
-                );
             }
         } catch (error) {
             console.error('Error making bond available:', error);
             alert('Failed to make bond available.');
+        }
+    };
+
+    const handlePutOnAuction = async (bondId) => {
+        try {
+            const response = await axios.post(`${BACKEND_URL}/auctions/${bondId}`);
+            if (response.status === 200) {
+                alert('Bond put on auction successfully!');
+            }
+        } catch (error) {
+            console.error('Error putting bond on auction:', error);
+            alert('Failed to put bond on auction.');
         }
     };
 
@@ -62,6 +69,13 @@ const AdminBonds = () => {
                                 disabled={bond.status === 'available'}
                             >
                                 {bond.status === 'available' ? 'Available' : 'Make Available'}
+                            </button>
+                            <button
+                                onClick={() => handlePutOnAuction(bond.request_id)}
+                                disabled={bond.status === 'on auction'}
+                                style={{ marginLeft: '10px' }}
+                            >
+                                {bond.status === 'on auction' ? 'On Auction' : 'Put on Auction'}
                             </button>
                         </div>
                     ))}

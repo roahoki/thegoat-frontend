@@ -1,3 +1,5 @@
+// PENDIENTE QUE SOLO ADMINS PUEDEN COMPRAR PARA LA EMPRESA
+
 import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { FixturesContext } from '../../contexts/FixturesContext';

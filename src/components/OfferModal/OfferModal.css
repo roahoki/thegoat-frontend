@@ -1,0 +1,80 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px; /* Espaciado para dispositivos pequeños */
+}
+
+.modal-content {
+    background: #f9f9f9; /* Fondo ligeramente gris */
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px; /* Ancho máximo del modal */
+    width: 100%; /* Ocupa todo el ancho disponible si es menor a 600px */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto flotante */
+    text-align: left; /* Alineación del contenido */
+    position: relative;
+}
+
+.modal-content h2 {
+    font-size: 20px; /* Tamaño más pequeño para el título */
+    margin-bottom: 20px;
+    color: #333; /* Color del texto */
+}
+
+.modal-content p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555; /* Color del texto del contenido */
+}
+
+.modal-content ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0;
+    margin: 20px 0;
+    color: #555;
+}
+
+.modal-content li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #fa6900;
+}
+
+button {
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
