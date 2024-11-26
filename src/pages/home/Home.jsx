@@ -29,6 +29,7 @@ function Home() {
       // Guardar atributos en el localStorage
       localStorage.setItem('userId', data.user.id)
       localStorage.setItem('sessionToken', data.user.auth0Token)
+      localStorage.setItem('admin', data.user.isAdmin)
       // Agregar más atributos según sea necesario
 
     } catch (error) {
