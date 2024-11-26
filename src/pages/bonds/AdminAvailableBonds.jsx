@@ -44,8 +44,18 @@ const AdminAvailableBonds = () => {
     };
 
     const handleSetDiscount = async (bondId, discount) => {
+        const userId = localStorage.getItem('userId');
+        if (!userId) {
+            alert('You need to log in as an admin to set a discount.');
+            return;
+        }
+
         try {
-          const response = await axios.patch(`${BACKEND_URL}/admin/bonds/${bondId}/discount`, { discount });
+          const response = await axios.patch(`${BACKEND_URL}/admin/bonds/${bondId}/discount`, {
+            userId,
+            discount,
+          });
+
           if (response.status === 200) {
             alert('Discount applied successfully!');
             setAdminBonds((prevBonds) =>
