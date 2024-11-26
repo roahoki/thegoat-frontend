@@ -23,7 +23,7 @@ const AdminBonds = () => {
             setLoading(true);
             try {
                 console.log('User ID QUE SE MANDA', userId);
-                const response = await axios.get(`https://arquisis.thegoatdomain.me/admin/bonds`, {
+                const response = await axios.get(`${BACKEND_URL}/admin/bonds`, {
                     params: { userId }, // Enviar el userId como query parameter
                 });
                 setAdminBonds(response.data.adminBonds || []);
