@@ -12,7 +12,6 @@ const AdminBonds = () => {
     useEffect(() => {
         const fetchAdminBonds = async () => {
             const userId = localStorage.getItem('userId'); // Obtener el userId desde localStorage
-            console.log('User ID QUE SE MANDA', userId);
             
             if (!userId) {
                 alert('You need to log in as an admin to view bonds.');
@@ -21,6 +20,7 @@ const AdminBonds = () => {
     
             setLoading(true);
             try {
+                console.log('User ID QUE SE MANDA', userId);
                 const response = await axios.get(`${BACKEND_URL}/admin/bonds`, {
                     params: { userId }, // Enviar el userId como query parameter
                 });
@@ -32,7 +32,7 @@ const AdminBonds = () => {
                 setLoading(false);
             }
         };
-    
+        console.log('User ID QUE SE MANDA', userId);
         fetchAdminBonds();
     }, []);
     
