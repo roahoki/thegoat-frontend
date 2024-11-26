@@ -12,7 +12,9 @@ const AdminBonds = () => {
     useEffect(() => {
         const fetchAdminBonds = async () => {
             const userId = localStorage.getItem('userId'); // Obtener el userId desde localStorage
-            
+            console.log('Métodos de obtención de userId:');
+            console.log('localStorage:', localStorage.getItem('userId'));
+            console.log('Context/State:', userId); 
             if (!userId) {
                 alert('You need to log in as an admin to view bonds.');
                 return;
