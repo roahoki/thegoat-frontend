@@ -46,6 +46,7 @@ const OfferModal = ({ offer, onClose }) => {
         try {
 
             const response = await axios.post(`${BACKEND_URL}/auctions/${offer.auction_id}/offer`, {
+                userId: localStorage.getItem('userId'),
                 bondId: selectedBond.request_id,
                 fixture_id: selectedBond.fixture_id,
                 league_name: selectedBond.league_name,
