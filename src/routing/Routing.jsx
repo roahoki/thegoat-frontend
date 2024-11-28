@@ -29,7 +29,7 @@ const Routing = () => {
                 <Route path="/purchase-completed" element={<PurchaseCompleted />} />
                 <Route path="/recommendations" element={<Recommendations />} />
                 <Route path="/admin/bonds/avail" element={<AdminAvailableBonds />} />
-                <Route path="/admin/bonds" element={<Test />} />
+                <Route path="/admin/bonds" element={<AdminBonds />} />
                 <Route path="/admin/auctions" element={<AdminAuctions />} />
                 <Route path="/admin/auctions/offers" element={<AdminAuctionOffers />} />
                 <Route path="/admin/auctions/proposals" element={<AdminProposals />} />
