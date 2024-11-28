@@ -12,6 +12,9 @@ import AdminAvailableBonds from '../pages/bonds/AdminAvailableBonds';
 import AdminAuctions from '../pages/auctions/AdminAuctions';
 import AdminAuctionOffers from '../pages/auctions/AdminAuctionOffers';
 import AdminProposals from '../pages/auctions/AdminProposals'
+import Test from '../pages/bonds/test';
+
+
 
 const Routing = () => {
   return (
@@ -26,7 +29,7 @@ const Routing = () => {
                 <Route path="/purchase-completed" element={<PurchaseCompleted />} />
                 <Route path="/recommendations" element={<Recommendations />} />
                 <Route path="/admin/bonds/avail" element={<AdminAvailableBonds />} />
-                <Route path="/admin/bonds" element={<AdminBonds />} />
+                <Route path="/admin/bonds" element={<Test />} />
                 <Route path="/admin/auctions" element={<AdminAuctions />} />
                 <Route path="/admin/auctions/offers" element={<AdminAuctionOffers />} />
                 <Route path="/admin/auctions/proposals" element={<AdminProposals />} />
