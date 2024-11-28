@@ -19,14 +19,14 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
-      run: npm install
+      run: yarn install
 
     - name: Build the application
       env:
         VITE_AUTH0_DOMAIN: ${{ secrets.VITE_AUTH0_DOMAIN }}
         VITE_AUTH0_CLIENT_ID: ${{ secrets.VITE_AUTH0_CLIENT_ID }}
         VITE_BACKEND_URL: ${{ secrets.VITE_BACKEND_URL }}
-      run: npm run build
+      run: yarn dev
 
     - name: Deploy to S3
       env:
