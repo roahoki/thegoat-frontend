@@ -18,6 +18,12 @@ const AdminBonds = () => {
                 alert('You need to log in as an admin to view bonds.');
                 return;
             }
+
+            console.log('Complete request details:', {
+                url: `${BACKEND_URL}/admin/bonds`,
+                userId: userId,
+                fullQueryParams: { userId }
+              });
     
             setLoading(true);
             try {
