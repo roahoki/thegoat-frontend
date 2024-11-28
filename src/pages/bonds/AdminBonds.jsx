@@ -13,17 +13,10 @@ const AdminBonds = () => {
         const fetchAdminBonds = async () => {
             const userId = localStorage.getItem('userId'); // Obtener el userId desde localStorage
             console.log('User Id sent:', userId); 
-            console.log('Stored userId type:', typeof userId);
             if (!userId) {
                 alert('You need to log in as an admin to view bonds.');
                 return;
             }
-
-            console.log('Complete request details:', {
-                url: `${BACKEND_URL}/admin/bonds`,
-                userId: userId,
-                fullQueryParams: { userId }
-              });
     
             setLoading(true);
             try {
