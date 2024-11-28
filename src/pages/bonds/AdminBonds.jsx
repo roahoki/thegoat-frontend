@@ -12,7 +12,8 @@ const AdminBonds = () => {
     useEffect(() => {
         const fetchAdminBonds = async () => {
             const userId = localStorage.getItem('userId'); // Obtener el userId desde localStorage
-            console.log('Métodos de obtención de userId:');
+            console.log('localStorage:', localStorage.getItem('userId'));
+            console.log('Context/State:', userId); 
             if (!userId) {
                 alert('You need to log in as an admin to view bonds.');
                 return;
@@ -25,7 +26,6 @@ const AdminBonds = () => {
                     params: { userId }, // Enviar el userId como query parameter
                 });
                 setAdminBonds(response.data.adminBonds || []);
-                console.log('Bonos obtenidos del backend:', response.data.adminBonds || []);
             } catch (error) {
                 console.error('Error fetching admin bonds:', error);
                 alert(error.response?.data?.error || 'Failed to fetch admin bonds.');
